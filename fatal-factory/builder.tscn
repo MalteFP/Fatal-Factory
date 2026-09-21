@@ -12,3 +12,10 @@ script = ExtResource("1_h1ki1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeletionMask" unique_id=215123156]
 shape = SubResource("RectangleShape2D_q2j6n")
+
+[node name="Polygon2D" type="Polygon2D" parent="DeletionMask/CollisionShape2D" unique_id=411577577]
+z_index = 1
+color = Color(1, 0, 0, 0.50980395)
+polygon = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+
+[connection signal="item_rect_changed" from="DeletionMask/CollisionShape2D/Polygon2D" to="." method="_on_polygon_2d_item_rect_changed"]

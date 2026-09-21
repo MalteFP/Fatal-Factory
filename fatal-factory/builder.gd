@@ -17,7 +17,6 @@ func _process(_delta: float) -> void:
 		currently_building.global_position = rect_pos
 	elif deleting:
 		$DeletionMask/CollisionShape2D.global_position = rect_pos + Vector2(8,8)
-		
 
 func get_mouse_cell() -> Vector2i:
 	var mouse = get_global_mouse_position()
@@ -42,8 +41,12 @@ func _unhandled_input(_event: InputEvent) -> void:
 		set_building()
 	if Input.is_action_just_pressed("build"):
 		deleting = false
+		$DeletionMask/CollisionShape2D/Polygon2D.visible = false
+		$DeletionMask/CollisionShape2D.disabled = true
 	if Input.is_action_just_pressed("delete"):
 		deleting = true
+		$DeletionMask/CollisionShape2D/Polygon2D.visible = true
+		$DeletionMask/CollisionShape2D.disabled = false
 	
 func set_building():
 	var b = preload("res://Building.tscn")
