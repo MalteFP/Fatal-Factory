@@ -11,7 +11,6 @@ var deleting: bool = false
 var currently_building: Building
 
 func _process(_delta: float) -> void:
-	var mouse_pos = get_viewport().get_mouse_position()
 	rect_pos = cell_to_world(get_mouse_cell())
 	if currently_building and not deleting:
 		currently_building.global_position = rect_pos
@@ -35,7 +34,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			delete()
 		else:
 			build()
-	if Input.is_action_just_pressed("new building"):
+	if Input.is_action_just_pressed("new building") and not deleting:
 		if currently_building:
 			currently_building.queue_free()
 		set_building()

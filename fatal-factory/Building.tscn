@@ -4,6 +4,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2j6n"]
+
 [node name="Building" type="Node2D" unique_id=1861920436]
 script = ExtResource("1_e37n3")
 
@@ -14,3 +16,9 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=285905480]
 shape = SubResource("RectangleShape2D_q2j6n")
+
+[node name="Label" type="Label" parent="." unique_id=1538451738]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_q2j6n")
+text = "Error"
