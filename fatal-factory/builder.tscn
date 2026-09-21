@@ -2,5 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ltqustuwhqmu" path="res://builder.gd" id="1_h1ki1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
+size = Vector2(15, 15)
+
 [node name="Building" type="Node2D" unique_id=485209350]
 script = ExtResource("1_h1ki1")
+
+[node name="DeletionMask" type="Area2D" parent="." unique_id=633750387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeletionMask" unique_id=215123156]
+shape = SubResource("RectangleShape2D_q2j6n")
