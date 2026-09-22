@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
 size = Vector2(15, 15)
 
-[node name="Building" type="Node2D" unique_id=485209350]
+[node name="builder" type="Node2D" unique_id=485209350]
 script = ExtResource("1_h1ki1")
 
 [node name="DeletionMask" type="Area2D" parent="." unique_id=633750387]
@@ -17,5 +17,17 @@ shape = SubResource("RectangleShape2D_q2j6n")
 z_index = 1
 color = Color(1, 0, 0, 0.50980395)
 polygon = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=739234124]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer" unique_id=240929082]
+offset_left = 892.0
+offset_top = 10.0
+offset_right = 1142.0
+offset_bottom = 638.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer" unique_id=1086468636]
+layout_mode = 2
+columns = 2
 
 [connection signal="item_rect_changed" from="DeletionMask/CollisionShape2D/Polygon2D" to="." method="_on_polygon_2d_item_rect_changed"]

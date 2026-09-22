@@ -10,6 +10,12 @@ var deleting: bool = false
 
 var currently_building: Building
 
+var buildings = []
+
+func _ready() -> void:
+	pass
+
+
 func _process(_delta: float) -> void:
 	rect_pos = cell_to_world(get_mouse_cell())
 	if currently_building and not deleting:
