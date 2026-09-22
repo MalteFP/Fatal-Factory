@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b1h2l8gaa7fxn"]
+
+[ext_resource type="Texture2D" uid="uid://b1jrdbnl4fwbs" path="res://textures/buildings/drill.png" id="1_0fbet"]
+
+[node name="Control" type="Button" unique_id=272155611]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -1102.0
+offset_bottom = -598.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_0fbet")
+
+[node name="Button" type="Button" parent="." unique_id=306123107]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 29.0
+offset_right = 139.0
+offset_bottom = 37.0
+text = "test"

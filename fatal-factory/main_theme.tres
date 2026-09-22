@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bybl5pmtsvp0s"]
+
+[ext_resource type="FontFile" uid="uid://ba36ckg3vgu64" path="res://textures/fonts/Pixelta.ttf" id="1_470mv"]
+
+[resource]
+Button/fonts/font = ExtResource("1_470mv")
