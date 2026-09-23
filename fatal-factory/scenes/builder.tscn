@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn53yhritl2c5" path="res://scenes/building_button.tscn" id="2_glllh"]
 [ext_resource type="PackedScene" uid="uid://hbu5t08a8q0w" path="res://buildings/building_scenes/conveyor/conveyor_straight.tscn" id="3_rcluh"]
 [ext_resource type="PackedScene" uid="uid://dntejqythnqvr" path="res://buildings/building_scenes/conveyor/conveyor_curved.tscn" id="4_dqica"]
+[ext_resource type="PackedScene" uid="uid://c630802bg4u5p" path="res://buildings/building_scenes/hub/hub.tscn" id="5_fsn73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
 size = Vector2(15, 15)
@@ -43,5 +44,9 @@ building_scene = ExtResource("3_rcluh")
 [node name="building_button3" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=1083361488 instance=ExtResource("2_glllh")]
 layout_mode = 2
 building_scene = ExtResource("4_dqica")
+
+[node name="building_button4" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=1775295859 instance=ExtResource("2_glllh")]
+layout_mode = 2
+building_scene = ExtResource("5_fsn73")
 
 [connection signal="item_rect_changed" from="DeletionMask/CollisionShape2D/Polygon2D" to="." method="_on_polygon_2d_item_rect_changed"]
