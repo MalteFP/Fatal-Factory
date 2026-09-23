@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dbewyqhrrt6d0" path="res://scripts/building_button.gd" id="1_ufg3m"]
 [ext_resource type="PackedScene" uid="uid://crit4mta2l4kb" path="res://buildings/building_scenes/Drill.tscn" id="2_5th2c"]
-[ext_resource type="Texture2D" uid="uid://b1jrdbnl4fwbs" path="res://textures/buildings/drill.png" id="3_5th2c"]
 
 [node name="building_button" type="Button" unique_id=142741754]
 custom_minimum_size = Vector2(100, 100)
@@ -13,6 +12,5 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_ufg3m")
 building_scene = ExtResource("2_5th2c")
-texture = ExtResource("3_5th2c")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

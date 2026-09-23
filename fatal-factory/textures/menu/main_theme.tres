@@ -46,6 +46,50 @@ texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpnaw"]
+load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2da3m"]
+texture = SubResource("CompressedTexture2D_tpnaw")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 128, 128)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fmu5a"]
+load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4r8f"]
+texture = SubResource("CompressedTexture2D_fmu5a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 128, 128)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uh2d4"]
+load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kevrn"]
+texture = SubResource("CompressedTexture2D_uh2d4")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 128, 128)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf8ra"]
+load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr4lk"]
+texture = SubResource("CompressedTexture2D_tf8ra")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 128, 128)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_58jnp"]
 load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
@@ -67,5 +111,18 @@ Button/fonts/font = ExtResource("1_470mv")
 Button/styles/hover = SubResource("StyleBoxTexture_58jnp")
 Button/styles/normal = SubResource("StyleBoxTexture_k8mdw")
 Button/styles/pressed = SubResource("StyleBoxTexture_52mx2")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_470mv")
+Label/styles/focus = SubResource("StyleBoxTexture_k8mdw")
+Label/styles/normal = SubResource("StyleBoxTexture_k8mdw")
 Panel/styles/panel = SubResource("StyleBoxTexture_0omi4")
+RichTextLabel/fonts/bold_font = ExtResource("1_470mv")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_470mv")
+RichTextLabel/fonts/italics_font = ExtResource("1_470mv")
+RichTextLabel/fonts/mono_font = ExtResource("1_470mv")
+RichTextLabel/fonts/normal_font = ExtResource("1_470mv")
+RichTextLabel/styles/background = SubResource("StyleBoxTexture_2da3m")
+RichTextLabel/styles/fill = SubResource("StyleBoxTexture_g4r8f")
+RichTextLabel/styles/focus = SubResource("StyleBoxTexture_kevrn")
+RichTextLabel/styles/normal = SubResource("StyleBoxTexture_yr4lk")
 ScrollContainer/styles/panel = SubResource("StyleBoxTexture_466ly")

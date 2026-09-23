@@ -7,14 +7,20 @@ var texture: CompressedTexture2D
 var output_res
 var output_amount
 
+var cost
+var tooltip
+
 var sprite: Sprite2D
 var area: Area2D
 var collision_shape: CollisionShape2D
 
 
-func setup(building_size: Vector2i, building_texture: CompressedTexture2D, building_output_res, building_output_amount) -> void:
+
+func setup(building_size: Vector2i, building_texture: CompressedTexture2D, building_tooltip: String, building_output_res, building_output_amount) -> void:
 	size = building_size
 	texture = building_texture
+	tooltip = building_tooltip
+	
 	output_res = building_output_res
 	output_amount = building_output_amount
 	
