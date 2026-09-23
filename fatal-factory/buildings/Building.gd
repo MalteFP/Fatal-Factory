@@ -7,15 +7,20 @@ var texture: CompressedTexture2D
 var output_res
 var output_amount
 
+var sprite: Sprite2D
+var area: Area2D
+var collision_shape: CollisionShape2D
+
+
 func setup(building_size: Vector2i, building_texture: CompressedTexture2D, building_output_res, building_output_amount) -> void:
 	size = building_size
 	texture = building_texture
 	output_res = building_output_res
 	output_amount = building_output_amount
 	
+	build_children()
 	
-	$BuildingSprite.texture = self.texture
-	
+	sprite.texture = texture
 	build_collision_rect()
 	
 
@@ -24,5 +29,17 @@ func setup(building_size: Vector2i, building_texture: CompressedTexture2D, build
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
 	rect.size = size * 16 - Vector2i(1,1)
-	$Area2D/CollisionShape2D.position = size * 8
-	$Area2D/CollisionShape2D.set_shape(rect)
+	collision_shape.position = size * 8
+	collision_shape.set_shape(rect)
+
+
+func build_children():
+	sprite = Sprite2D.new()
+	add_child(sprite)
+	
+	area = Area2D.new()
+	add_child(area)
+	
+	collision_shape = CollisionShape2D.new()
+	area.add_child(collision_shape)
+	

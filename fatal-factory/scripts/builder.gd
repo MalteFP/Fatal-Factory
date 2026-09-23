@@ -40,10 +40,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 			delete()
 		else:
 			build()
-	if Input.is_action_just_pressed("new building") and not deleting:
-		if currently_building:
-			currently_building.queue_free()
-		set_building()
 	if Input.is_action_just_pressed("build"):
 		deleting = false
 		$DeletionMask/CollisionShape2D/Polygon2D.visible = false
@@ -53,11 +49,12 @@ func _unhandled_input(_event: InputEvent) -> void:
 		$DeletionMask/CollisionShape2D/Polygon2D.visible = true
 		$DeletionMask/CollisionShape2D.disabled = false
 	
-func set_building():
-	var b = preload("res://Building.tscn")
-	currently_building = b.instantiate()
-	currently_building.setup(Vector2i(3,2),load("res://textures/buildings/drill.png"),1,1)
+func set_building(building_scene: PackedScene):
+	if currently_building:
+		queue_free()
+	currently_building = building_scene.instantiate()
 	add_child(currently_building)
+
 
 
 
@@ -66,18 +63,18 @@ func is_overlapping(area: Area2D) -> bool:
 
 
 func build():
-	if currently_building and not is_overlapping(currently_building.get_node("Area2D")):
+	if currently_building and not is_overlapping(currently_building.area):
 			currently_building = null
 	elif currently_building:
 		var blinkTween = get_tree().create_tween()
 		blinkTween.tween_property(
-			currently_building.get_node("BuildingSprite"),
+			currently_building.sprite,
 			"self_modulate",
 			Color(1.0, 0.0, 0.0, 1.0),
 			0.1
 			)
 		blinkTween.chain().tween_property(
-			currently_building.get_node("BuildingSprite"),
+			currently_building.sprite,
 			"self_modulate",
 			Color(1.0, 1.0, 1.0, 1.0),
 			0.1)
