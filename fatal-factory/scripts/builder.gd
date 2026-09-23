@@ -13,7 +13,9 @@ var currently_building: Building
 var buildings = []
 
 func _ready() -> void:
-	pass
+	deleting = false
+	$DeletionMask/CollisionShape2D/Polygon2D.visible = false
+	$DeletionMask/CollisionShape2D.disabled = true
 
 
 func _process(_delta: float) -> void:

@@ -2,7 +2,7 @@ extends Node2D
 class_name Building
 
 var size: Vector2i
-var texture: CompressedTexture2D
+var sprite_frames: SpriteFrames
 
 var output_res
 var output_amount
@@ -10,15 +10,15 @@ var output_amount
 var cost
 var tooltip
 
-var sprite: Sprite2D
+var sprite: AnimatedSprite2D
 var area: Area2D
 var collision_shape: CollisionShape2D
 
 
 
-func setup(building_size: Vector2i, building_texture: CompressedTexture2D, building_tooltip: String, building_output_res, building_output_amount) -> void:
+func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_tooltip: String, building_output_res, building_output_amount) -> void:
 	size = building_size
-	texture = building_texture
+	sprite_frames = building_sprite_frames
 	tooltip = building_tooltip
 	
 	output_res = building_output_res
@@ -26,8 +26,10 @@ func setup(building_size: Vector2i, building_texture: CompressedTexture2D, build
 	
 	build_children()
 	
-	sprite.texture = texture
+	sprite.sprite_frames = sprite_frames
 	build_collision_rect()
+	
+	sprite.play("default")
 	
 
 
@@ -40,7 +42,8 @@ func build_collision_rect():
 
 
 func build_children():
-	sprite = Sprite2D.new()
+	sprite = AnimatedSprite2D.new()
+	sprite.centered = false
 	add_child(sprite)
 	
 	area = Area2D.new()
