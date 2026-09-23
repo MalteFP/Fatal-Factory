@@ -12,6 +12,8 @@ var currently_building: Building
 
 var buildings = []
 
+var rotationToVecDic = {0.0: Vector2i(0,0), 90.0: Vector2i(-1,0), 180.0: Vector2i(-1,-1), 270.0: Vector2i(0,-1)}
+
 func _ready() -> void:
 	deleting = false
 	$DeletionMask/CollisionShape2D/Polygon2D.visible = false
@@ -21,7 +23,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	rect_pos = cell_to_world(get_mouse_cell())
 	if currently_building and not deleting:
-		currently_building.global_position = rect_pos - Vector2(floor(currently_building.size.x / 2), floor(currently_building.size.y / 2)) * 16
+		if currently_building.scale.x == -1:
+			currently_building.global_position = rect_pos - Vector2(floor(currently_building.size.x / 2), floor(currently_building.size.y / 2)) * 16 - Vector2(currently_building.size * rotationToVecDic[wrapf(currently_building.rotation_degrees + 180, 0 ,360)] * 16)
+			currently_building.move_local_y(-16)
+		else:
+			currently_building.global_position = rect_pos - Vector2(floor(currently_building.size.x / 2), floor(currently_building.size.y / 2)) * 16 - Vector2(currently_building.size * rotationToVecDic[currently_building.rotation_degrees] * 16)
 	elif deleting:
 		$DeletionMask/CollisionShape2D.global_position = rect_pos + Vector2(8,8)
 
@@ -42,8 +48,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 			delete()
 		else:
 			build()
-	if not deleting and Input.is_action_just_pressed("rotate"):
-		currently_building.rotation_degrees += 90
+	if not deleting and Input.is_action_just_pressed("rotate") and currently_building and currently_building.rotatable:
+		currently_building.rotation_degrees = wrapf(currently_building.rotation_degrees + 90, 0 ,360)
+	if not deleting and Input.is_action_just_pressed("mirror") and currently_building and currently_building.mirrorable:
+		currently_building.scale.x *= -1
 	if Input.is_action_just_pressed("build"):
 		deleting = false
 		$DeletionMask/CollisionShape2D/Polygon2D.visible = false
@@ -68,6 +76,13 @@ func is_overlapping(area: Area2D) -> bool:
 
 func build():
 	if currently_building and not is_overlapping(currently_building.area):
+		if Input.is_action_pressed("multi place"):
+			var new_building = currently_building.duplicate()
+			add_child(new_building)
+			new_building.just_placed()
+			new_building.placed = true
+		else:
+			currently_building.just_placed()
 			currently_building.placed = true
 			currently_building = null
 	elif currently_building:
@@ -88,4 +103,4 @@ func build():
 func delete():
 	var overlap = $DeletionMask.get_overlapping_areas()
 	for area in overlap:
-		area.get_parent().queue_free()
+		area.get_parent().delete()

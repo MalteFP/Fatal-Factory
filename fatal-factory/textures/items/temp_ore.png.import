@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwr1l1oikub74"
-path="res://.godot/imported/pixil-frame-0 (26).png-1095689cf1eeab28c6ec6b98a09027d1.ctex"
+uid="uid://cnswjb0xnyh5w"
+path="res://.godot/imported/temp_ore.png-07e867b3e199cc646b22c3000d52732e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/buildings/drill/pixil-frame-0 (26).png"
-dest_files=["res://.godot/imported/pixil-frame-0 (26).png-1095689cf1eeab28c6ec6b98a09027d1.ctex"]
+source_file="res://textures/items/temp_ore.png"
+dest_files=["res://.godot/imported/temp_ore.png-07e867b3e199cc646b22c3000d52732e.ctex"]
 
 [params]
 

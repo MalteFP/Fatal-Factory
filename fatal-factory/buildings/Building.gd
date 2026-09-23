@@ -14,8 +14,10 @@ var sprite: AnimatedSprite2D
 var area: Area2D
 var collision_shape: CollisionShape2D
 
-var placed = false
+var rotatable: bool
+var mirrorable: bool
 
+var placed = false
 
 
 func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_tooltip: String, building_output_res, building_output_amount) -> void:
@@ -34,7 +36,8 @@ func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, buildi
 	sprite.play("default")
 	
 
-
+func just_placed():
+	pass
 
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
@@ -54,3 +57,5 @@ func build_children():
 	collision_shape = CollisionShape2D.new()
 	area.add_child(collision_shape)
 	
+func delete():
+	queue_free()
