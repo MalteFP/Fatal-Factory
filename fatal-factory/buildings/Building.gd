@@ -14,6 +14,8 @@ var sprite: AnimatedSprite2D
 var area: Area2D
 var collision_shape: CollisionShape2D
 
+var placed = false
+
 
 
 func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_tooltip: String, building_output_res, building_output_amount) -> void:

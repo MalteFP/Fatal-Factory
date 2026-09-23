@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crit4mta2l4kb"]
 
-[ext_resource type="Script" uid="uid://b4xpmcb7b5550" path="res://buildings/building_scenes/drill.gd" id="1_ljso6"]
+[ext_resource type="Script" uid="uid://b4xpmcb7b5550" path="res://buildings/building_scenes/drill/drill.gd" id="1_ljso6"]
 
 [node name="Drill" type="Node2D" unique_id=1536382538]
 script = ExtResource("1_ljso6")

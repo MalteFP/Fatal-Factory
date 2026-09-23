@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjshq7sd6xjhe"
-path="res://.godot/imported/drill_animation_sheet.png-178f08d0300b04e07bd75ebd71ffdf52.ctex"
+uid="uid://2fxw62eh3qwe"
+path="res://.godot/imported/conveyor.png-9a7825444dd46b3fcaa9c0ceac02265e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/buildings/drill/drill_animation_sheet.png"
-dest_files=["res://.godot/imported/drill_animation_sheet.png-178f08d0300b04e07bd75ebd71ffdf52.ctex"]
+source_file="res://textures/buildings/conveyor/conveyor.png"
+dest_files=["res://.godot/imported/conveyor.png-9a7825444dd46b3fcaa9c0ceac02265e.ctex"]
 
 [params]
 

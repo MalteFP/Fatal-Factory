@@ -21,7 +21,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	rect_pos = cell_to_world(get_mouse_cell())
 	if currently_building and not deleting:
-		currently_building.global_position = rect_pos
+		currently_building.global_position = rect_pos - Vector2(floor(currently_building.size.x / 2), floor(currently_building.size.y / 2)) * 16
 	elif deleting:
 		$DeletionMask/CollisionShape2D.global_position = rect_pos + Vector2(8,8)
 
@@ -42,6 +42,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 			delete()
 		else:
 			build()
+	if not deleting and Input.is_action_just_pressed("rotate"):
+		currently_building.rotation_degrees += 90
 	if Input.is_action_just_pressed("build"):
 		deleting = false
 		$DeletionMask/CollisionShape2D/Polygon2D.visible = false
@@ -53,7 +55,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 func set_building(building_scene: PackedScene):
 	if currently_building:
-		queue_free()
+		currently_building.queue_free()
 	currently_building = building_scene.instantiate()
 	add_child(currently_building)
 
@@ -66,6 +68,7 @@ func is_overlapping(area: Area2D) -> bool:
 
 func build():
 	if currently_building and not is_overlapping(currently_building.area):
+			currently_building.placed = true
 			currently_building = null
 	elif currently_building:
 		var blinkTween = get_tree().create_tween()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ltqustuwhqmu" path="res://scripts/builder.gd" id="1_h1ki1"]
 [ext_resource type="PackedScene" uid="uid://cn53yhritl2c5" path="res://scenes/building_button.tscn" id="2_glllh"]
+[ext_resource type="PackedScene" uid="uid://hbu5t08a8q0w" path="res://buildings/building_scenes/conveyor/conveyor_straight.tscn" id="3_rcluh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
 size = Vector2(15, 15)
@@ -33,5 +34,9 @@ columns = 2
 
 [node name="building_button" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=142741754 instance=ExtResource("2_glllh")]
 layout_mode = 2
+
+[node name="building_button2" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=110737781 instance=ExtResource("2_glllh")]
+layout_mode = 2
+building_scene = ExtResource("3_rcluh")
 
 [connection signal="item_rect_changed" from="DeletionMask/CollisionShape2D/Polygon2D" to="." method="_on_polygon_2d_item_rect_changed"]
