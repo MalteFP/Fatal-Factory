@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 	if placed:
 		for item in items:
-			if item.global_position == goal_marker.global_position:
+			if item.global_position.distance_to(goal_marker.global_position) < 0.1:
 				WorldItemHolder.items_in_world.append(item)
 				last_item = item
 				items.erase(item)

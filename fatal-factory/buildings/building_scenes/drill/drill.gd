@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 					sprite.pause()
 					return
 			sprite.play("default")
-			sprite
 			time_since_spawn = 0
 			var item = Item.new()
 			item.setup(load("res://textures/items/temp_ore.png"))
