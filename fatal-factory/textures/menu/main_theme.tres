@@ -100,7 +100,7 @@ texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
-modulate_color = Color(1, 1, 1, 0.8235294)
+modulate_color = Color(0.29677072, 0.15350106, 0, 1)
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
