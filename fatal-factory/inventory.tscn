@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c71jmd2qijeov"]
+
+[ext_resource type="Script" uid="uid://bhr6oyusny1pj" path="res://inventory.gd" id="1_pohso"]
+
+[node name="Inventory" type="Control" unique_id=2023566674]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pohso")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1642556150]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer" unique_id=867195040]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer" unique_id=935340200]
+layout_mode = 2

@@ -8,16 +8,18 @@ func _ready() -> void:
 	setup(
 		Vector2i(4,4),
 		load("res://textures/buildings/hub/hub_sprite_frames.tres"),
+		load("res://textures/buildings/hub/hub.png"),
 		"The place to store your stuff",
 		1,
 		1
 		)
 
 func _process(_delta: float) -> void:
-	for item in WorldItemHolder.items_in_world:
-		if item and (item.global_position.distance_to(start_marker.global_position) < 8 or item.global_position.distance_to(start_marker_2.global_position) < 8):
-			WorldItemHolder.items_in_world.erase(item)
-			item.queue_free()
+	if placed:
+		for item in WorldItemHolder.items_in_world:
+			if item and (item.global_position.distance_to(start_marker.global_position) < 8 or item.global_position.distance_to(start_marker_2.global_position) < 8):
+				WorldItemHolder.items_in_world.erase(item)
+				item.queue_free()
 
 func just_placed():
 	var conveyor1 = conveyor_straight.new()

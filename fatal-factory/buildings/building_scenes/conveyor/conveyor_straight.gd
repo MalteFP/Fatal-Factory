@@ -6,6 +6,7 @@ func _ready() -> void:
 	setup(
 		Vector2i(1,1),
 		load("res://textures/buildings/conveyor/straight/conveyor_straight.tres"),
+		load("res://textures/buildings/conveyor/straight/conveyor_straight.png"),
 		"Transfers items",
 		1,
 		1

@@ -7,6 +7,7 @@ func _ready() -> void:
 	setup(
 		Vector2i(3,2),
 		load("res://textures/buildings/drill/drill_sprite_frames.tres"),
+		load("res://textures/buildings/drill/drill.png"),
 		"Generates Per Secound: 7 Iron \n Costs: 90 wood \n Uses: 10 Watt",
 		1,
 		1
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 			sprite.play("default")
 			time_since_spawn = 0
 			var item = Item.new()
-			item.setup(load("res://textures/items/temp_ore.png"))
+			item.setup(load("res://textures/items/temp_ore.png"), "Iron: Producded by drills")
 			add_child(item)
 			item.z_index = -1
 			item.position = Vector2(8,16)

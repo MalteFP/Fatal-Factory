@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c1a1sw5dudmxn" path="res://buildings/building_scenes/conveyor/conveyor_straight.gd" id="1_ulcj4"]
 
-[node name="conveyor_straight" type="Node2D" unique_id=1382130958]
+[node name="Conveyor Straight" type="Node2D" unique_id=1382130958]
 script = ExtResource("1_ulcj4")
