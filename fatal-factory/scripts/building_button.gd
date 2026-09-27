@@ -1,7 +1,7 @@
 extends Button
 
 @export var building_scene: PackedScene
-@onready var builder = get_parent().get_parent().get_parent().get_parent()
+@onready var builder = get_parent().get_parent().get_parent().get_parent().get_parent()
 
 var building_name: String
 var building_cost: Array[Array]
