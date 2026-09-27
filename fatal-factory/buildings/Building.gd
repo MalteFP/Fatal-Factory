@@ -8,6 +8,7 @@ var output_res
 var output_amount
 
 var cost
+var production
 var tooltip
 
 var sprite: AnimatedSprite2D
@@ -21,14 +22,13 @@ var mirrorable: bool
 var placed = false
 
 
-func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_icon: CompressedTexture2D, building_tooltip: String, building_output_res, building_output_amount) -> void:
+func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_icon: CompressedTexture2D, building_tooltip: String, building_cost: Array[Array], building_production: Array[Array] = []) -> void:
 	size = building_size
 	sprite_frames = building_sprite_frames
 	tooltip = building_tooltip
 	icon = building_icon
-	output_res = building_output_res
-	output_amount = building_output_amount
-	
+	cost = building_cost
+	production = building_production
 	build_children()
 	
 	sprite.sprite_frames = sprite_frames

@@ -10,8 +10,9 @@ func _ready() -> void:
 		load("res://textures/buildings/hub/hub_sprite_frames.tres"),
 		load("res://textures/buildings/hub/hub.png"),
 		"The place to store your stuff",
-		1,
-		1
+		[
+			[10,load("res://items/item_scenes/iron.tscn")]
+			]
 		)
 
 func _process(_delta: float) -> void:

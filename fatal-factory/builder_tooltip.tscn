@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://c50vhh4n4a88n"]
 
 [ext_resource type="Script" uid="uid://cx57m12utrn7r" path="res://builder_tooltip.gd" id="1_ojdej"]
+[ext_resource type="Theme" uid="uid://b7l4lp5uv08ow" path="res://textures/menu/tooltip_theme.tres" id="1_pkpxb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkpxb"]
 
 [node name="builder_tooltip" type="PanelContainer" unique_id=458097995]
 offset_left = 11.0
 offset_top = 3.0
 offset_right = 36.0
 offset_bottom = 65.0
+theme = ExtResource("1_pkpxb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pkpxb")
 script = ExtResource("1_ojdej")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=359917655]
@@ -22,6 +27,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=638021925]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 stretch_mode = 5
 
@@ -29,3 +35,4 @@ stretch_mode = 5
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
+autowrap_mode = 0

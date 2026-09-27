@@ -8,8 +8,9 @@ func _ready() -> void:
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.tres"),
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.png"),
 		"Transfers items",
-		1,
-		1
+		[
+			[5,load("res://items/item_scenes/iron.tscn")]
+			]
 		)
 
 func create_markers() -> void:

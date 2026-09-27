@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ltqustuwhqmu" path="res://scripts/builder.gd" id="1_h1ki1"]
 [ext_resource type="PackedScene" uid="uid://cn53yhritl2c5" path="res://scenes/building_button.tscn" id="2_glllh"]
+[ext_resource type="Theme" uid="uid://bybl5pmtsvp0s" path="res://textures/menu/main_theme.tres" id="2_uwvx4"]
 [ext_resource type="PackedScene" uid="uid://hbu5t08a8q0w" path="res://buildings/building_scenes/conveyor/conveyor_straight.tscn" id="3_rcluh"]
 [ext_resource type="PackedScene" uid="uid://dntejqythnqvr" path="res://buildings/building_scenes/conveyor/conveyor_curved.tscn" id="4_dqica"]
 [ext_resource type="PackedScene" uid="uid://c630802bg4u5p" path="res://buildings/building_scenes/hub/hub.tscn" id="5_fsn73"]
@@ -24,28 +25,32 @@ polygon = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=739234124]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer" unique_id=240929082]
+[node name="Window" type="Window" parent="CanvasLayer" unique_id=1667566072]
+oversampling_override = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Window" unique_id=240929082]
 offset_left = 892.0
 offset_top = 10.0
 offset_right = 1142.0
 offset_bottom = 638.0
+theme = ExtResource("2_uwvx4")
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ScrollContainer" unique_id=1086468636]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Window/ScrollContainer" unique_id=1086468636]
 layout_mode = 2
 columns = 2
 
-[node name="building_button" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=142741754 instance=ExtResource("2_glllh")]
+[node name="building_button" parent="CanvasLayer/Window/ScrollContainer/GridContainer" unique_id=142741754 instance=ExtResource("2_glllh")]
 layout_mode = 2
 
-[node name="building_button2" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=110737781 instance=ExtResource("2_glllh")]
+[node name="building_button2" parent="CanvasLayer/Window/ScrollContainer/GridContainer" unique_id=110737781 instance=ExtResource("2_glllh")]
 layout_mode = 2
 building_scene = ExtResource("3_rcluh")
 
-[node name="building_button3" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=1083361488 instance=ExtResource("2_glllh")]
+[node name="building_button3" parent="CanvasLayer/Window/ScrollContainer/GridContainer" unique_id=1083361488 instance=ExtResource("2_glllh")]
 layout_mode = 2
 building_scene = ExtResource("4_dqica")
 
-[node name="building_button4" parent="CanvasLayer/ScrollContainer/GridContainer" unique_id=1775295859 instance=ExtResource("2_glllh")]
+[node name="building_button4" parent="CanvasLayer/Window/ScrollContainer/GridContainer" unique_id=1775295859 instance=ExtResource("2_glllh")]
 layout_mode = 2
 building_scene = ExtResource("5_fsn73")
 
