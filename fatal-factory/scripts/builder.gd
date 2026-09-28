@@ -46,8 +46,12 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		if deleting:
 			delete()
-		else:
+		elif currently_building:
 			build()
+	if Input.is_action_just_pressed("stop building"):
+		if currently_building:
+			currently_building.queue_free()
+			currently_building = null
 	if not deleting and Input.is_action_just_pressed("rotate") and currently_building and currently_building.rotatable:
 		currently_building.rotation_degrees = wrapf(currently_building.rotation_degrees + 90, 0 ,360)
 	if not deleting and Input.is_action_just_pressed("mirror") and currently_building and currently_building.mirrorable:
@@ -58,6 +62,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 		$DeletionMask/CollisionShape2D.disabled = true
 	if Input.is_action_just_pressed("delete"):
 		deleting = true
+		if currently_building:
+			currently_building.queue_free()
+			currently_building = null
 		$DeletionMask/CollisionShape2D/Polygon2D.visible = true
 		$DeletionMask/CollisionShape2D.disabled = false
 	
@@ -75,6 +82,25 @@ func is_overlapping(area: Area2D) -> bool:
 
 
 func build():
+	for c in currently_building.cost:
+		var id = c[1].id
+		if Inventory.items[id] < c[0]:
+			var blinkTween = get_tree().create_tween()
+			blinkTween.tween_property(
+				currently_building.sprite,
+				"self_modulate",
+				Color(1.0, 0.0, 0.0, 1.0),
+				0.1
+				)
+			blinkTween.chain().tween_property(
+				currently_building.sprite,
+				"self_modulate",
+				Color(1.0, 1.0, 1.0, 1.0),
+				0.1)
+			return
+	for c in currently_building.cost:
+		var id = c[1].id
+		Inventory.items[id] -= c[0]
 	if currently_building and not is_overlapping(currently_building.area):
 		if Input.is_action_pressed("multi place"):
 			var new_building = currently_building.duplicate()

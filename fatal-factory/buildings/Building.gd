@@ -59,4 +59,6 @@ func build_children():
 	area.add_child(collision_shape)
 	
 func delete():
+	for c in cost:
+		Inventory.item_collected(c[1], c[0])
 	queue_free()

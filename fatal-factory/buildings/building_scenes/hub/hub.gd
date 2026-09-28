@@ -1,4 +1,5 @@
 extends Building
+class_name Hub
 
 var start_marker: Node2D
 var start_marker_2: Node2D
@@ -11,7 +12,7 @@ func _ready() -> void:
 		load("res://textures/buildings/hub/hub.png"),
 		"The place to store your stuff",
 		[
-			[10,load("res://items/item_scenes/iron.tscn")]
+			[10,Iron.new()]
 			]
 		)
 
@@ -19,6 +20,7 @@ func _process(_delta: float) -> void:
 	if placed:
 		for item in WorldItemHolder.items_in_world:
 			if item and (item.global_position.distance_to(start_marker.global_position) < 8 or item.global_position.distance_to(start_marker_2.global_position) < 8):
+				Inventory.item_collected(item, 1)
 				WorldItemHolder.items_in_world.erase(item)
 				item.queue_free()
 
@@ -44,7 +46,3 @@ func just_placed():
 	start_marker_2 = Node2D.new()
 	start_marker_2.position = Vector2(40,48)
 	add_child(start_marker_2)
-
-func _draw() -> void:
-	if start_marker:
-		draw_circle(to_local(start_marker.global_position), 10, Color(1.0, 0.0, 0.0, 1.0), true)

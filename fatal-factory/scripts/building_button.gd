@@ -37,7 +37,7 @@ func _make_custom_tooltip(_for_text):
 	for p in building_production:
 		rich_text_label.append_text(str(p[0]) + " ")
 		
-		var item = p[1].instantiate()
+		var item = p[1]
 		rich_text_label.append_text(item.name)
 		rich_text_label.add_image(item.texture)
 		if building_production.find(p) + 1 < building_production.size():
@@ -50,7 +50,7 @@ func _make_custom_tooltip(_for_text):
 	for c in building_cost:
 		rich_text_label.append_text(str(c[0]) + " ")
 		
-		var item = c[1].instantiate()
+		var item = c[1]
 		rich_text_label.append_text(item.name)
 		rich_text_label.add_image(item.texture)
 		if building_cost.find(c) + 1 < building_cost.size():

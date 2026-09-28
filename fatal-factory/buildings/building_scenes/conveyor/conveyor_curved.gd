@@ -9,7 +9,7 @@ func _ready() -> void:
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.png"),
 		"Transfers items",
 		[
-			[5,load("res://items/item_scenes/iron.tscn")]
+			[5,Iron.new()]
 			]
 		)
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d1murmomq15l0"]
+
+[ext_resource type="Script" uid="uid://hy7u0oj3j7fy" path="res://item_button.gd" id="1_0241j"]
+
+[node name="item_button" type="Button" unique_id=32576581]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+offset_right = 20.0
+offset_bottom = 20.0
+alignment = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_0241j")

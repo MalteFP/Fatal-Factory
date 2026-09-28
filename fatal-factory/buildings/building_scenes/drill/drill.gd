@@ -5,7 +5,12 @@ var conveyor1: conveyor_curved
 var spawn_per_minute: int
 var secounds_per_spawn: float
 
+@export var production_item: PackedScene
+
 func _ready() -> void:
+	
+	
+	
 	spawn_per_minute = 20
 	secounds_per_spawn = 60 / spawn_per_minute
 	
@@ -17,10 +22,10 @@ func _ready() -> void:
 		load("res://textures/buildings/drill/drill.png"),
 		"Generates Per Secound: 7 Iron \n Costs: 90 wood \n Uses: 10 Watt",
 		[
-			[15,load("res://items/item_scenes/iron.tscn")]
+			[15,Iron.new()]
 			],
 		[
-			[spawn_per_minute, load("res://items/item_scenes/iron.tscn")]
+			[spawn_per_minute, Iron.new()]
 			]
 		)
 	
@@ -38,8 +43,7 @@ func _process(delta: float) -> void:
 					return
 			sprite.play("default")
 			time_since_spawn = 0
-			var item = Item.new()
-			item.setup(load("res://textures/items/temp_ore.png"))
+			var item = Iron.new()
 			add_child(item)
 			item.z_index = -1
 			item.position = Vector2(8,16)

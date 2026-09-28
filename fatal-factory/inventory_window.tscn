@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cy21ahh33nivo"]
+
+[ext_resource type="Script" uid="uid://dobtd3h1rli11" path="res://inventory_window.gd" id="1_67x6n"]
+
+[node name="inventory_window" type="Window" unique_id=1635128554 groups=["inventory_window"]]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Inventory"
+position = Vector2i(20, 56)
+size = Vector2i(234, 230)
+transparent = true
+unfocusable = true
+min_size = Vector2i(130, 130)
+theme_override_constants/resize_margin = 10
+script = ExtResource("1_67x6n")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=574159953]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1733732430]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer" unique_id=1851581110]
+layout_mode = 2
