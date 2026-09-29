@@ -4,8 +4,10 @@ class_name Conveyor
 var items: Array[Item] = []
 
 var goal_marker: Node2D
+var goal_arrow: Sprite2D
 
 var start_marker: Node2D
+var start_arrow: Sprite2D
 
 var speed: float = 10
 
@@ -15,6 +17,7 @@ func _init() -> void:
 	rotatable = true
 	mirrorable = true
 	create_markers()
+	create_arrows()
 
 func _process(delta: float) -> void:
 	for i in range(items.size() - 1, -1, -1):
@@ -46,16 +49,30 @@ func _process(delta: float) -> void:
 
 func create_markers() -> void:
 	pass
+
+func create_arrows() ->void:
+	start_arrow = Sprite2D.new()
+	start_arrow.texture = load("res://arrow.png")
+	start_arrow.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
+	add_child(start_arrow)
+	start_arrow.position = start_marker.position
+	start_arrow.rotation_degrees = 180
 	
-	
-	
-func _draw() -> void:
-	if goal_marker:
-		draw_circle(to_local(goal_marker.global_position), 1, Color(0.0, 0.0, 1.0, 1.0))
-		draw_circle(to_local(start_marker.global_position), 1, Color(1.0, 0.0, 0.0, 1.0))
-		
+	goal_arrow = Sprite2D.new()
+	goal_arrow.texture = load("res://arrow.png")
+	goal_arrow.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
+	add_child(goal_arrow)
+	goal_arrow.position = goal_marker.position
+	goal_arrow.rotation_degrees = 180
 
 func delete():
 	for item in items:
 		item.queue_free()
 	queue_free()
+
+func just_placed():
+	placed = true
+	print(start_arrow)
+	start_arrow.visible = false
+	goal_arrow.visible = false
+	

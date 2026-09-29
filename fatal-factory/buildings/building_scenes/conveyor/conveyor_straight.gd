@@ -12,12 +12,15 @@ func _ready() -> void:
 			[5,Iron.new()]
 			]
 		)
+	goal_arrow.position += Vector2(0,8)
 
 func create_markers() -> void:
 	goal_marker = Node2D.new()
 	add_child(goal_marker)
-	goal_marker.position = Vector2(8,16)
+	goal_marker.position = Vector2(8,8)
 	
 	start_marker = Node2D.new()
 	add_child(start_marker)
-	start_marker.position = Vector2(8,0)
+	start_marker.position = Vector2(8,-8)
+	
+	

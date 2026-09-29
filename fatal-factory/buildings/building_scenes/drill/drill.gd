@@ -66,3 +66,6 @@ func just_placed():
 	conveyor2.z_index = -10
 	conveyor2.rotation_degrees = 90
 	conveyor2.position = Vector2(32,16)
+	
+	conveyor1.just_placed()
+	conveyor2.just_placed()

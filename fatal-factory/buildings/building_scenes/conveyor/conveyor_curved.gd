@@ -12,6 +12,9 @@ func _ready() -> void:
 			[5,Iron.new()]
 			]
 		)
+	goal_arrow.rotation_degrees = 90
+	start_arrow.rotation_degrees += 180
+	start_arrow.position += Vector2(0,8)
 
 func create_markers() -> void:
 	goal_marker = Node2D.new()

@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 				item.queue_free()
 
 func just_placed():
+	placed = true
 	var conveyor1 = conveyor_straight.new()
 	add_child(conveyor1)
 	conveyor1.placed = true
@@ -38,6 +39,9 @@ func just_placed():
 	conveyor2.z_index = -10
 	conveyor2.rotation_degrees = 180
 	conveyor2.position = Vector2(48,64)
+	
+	conveyor1.just_placed()
+	conveyor2.just_placed()
 	
 	start_marker = Node2D.new()
 	start_marker.position = Vector2(24,48)
