@@ -6,6 +6,7 @@ var noise_map = FastNoiseLite.new()
 var ore_noise_map = FastNoiseLite.new()
 
 @onready var tilemap = $TileMapLayer
+@onready var ore_tilemap = $OreTileMapLayer
 @onready var camera = $Camera2D
 
 var generated_tiles: Dictionary = {}
@@ -32,6 +33,13 @@ var ore_thresholds: Array[Dictionary] = [
 	{"limit": 0.2, "tile": Vector2i(4,0)},
 ]
 
+var ore_type_tresholds: Array[Dictionary] = [
+	{"max distance": 100, "tile": Vector2i(0,0)},
+	{"max distance": 500, "tile": Vector2i(1,0)},
+	{"max distance": 1000, "tile": Vector2i(2,0)},
+	{"max distance": 10000000, "tile": Vector2i(3,0)}
+]
+
 func _process(_delta: float) -> void:
 	generate_visible_tiles()
 
@@ -55,9 +63,10 @@ func _ready() -> void:
 	ore_noise_map.fractal_octaves = 2
 
 
-func get_tile_type(noise_value: float, ore_noise_value: float) -> Vector2i:
+func get_tile_type(noise_value: float, ore_noise_value: float, coords: Vector2) -> Vector2i:
 	for treshold in ore_thresholds:
 		if ore_noise_value < treshold["limit"]:
+			place_ore(coords)
 			return treshold["tile"]
 	for treshold in thresholds:
 		if noise_value < treshold["limit"]:
@@ -92,7 +101,7 @@ func generate_visible_tiles():
 			
 			var noise_value = (noise_map.get_noise_2d(x, y) + 1)/2
 			var ore_noise_value = (ore_noise_map.get_noise_2d(x, y) + 1)/2
-			var atlas_coords: Vector2i = get_tile_type(noise_value, ore_noise_value)
+			var atlas_coords: Vector2i = get_tile_type(noise_value, ore_noise_value, Vector2(x,y))
 			tilemap.set_cell(
 				Vector2i(x, y),
 				0,
@@ -101,7 +110,15 @@ func generate_visible_tiles():
 				)
 	
 	
-	
-	
-	
-	
+func place_ore(coords: Vector2):
+	var distance = Vector2(0,0).distance_to(coords)
+	for treshold in ore_type_tresholds:
+		if distance < treshold["max distance"]:
+			if randi_range(0,4) == 0:
+				ore_tilemap.set_cell(
+					coords,
+					0,
+					treshold["tile"],
+					rotations.pick_random()
+					)
+			return

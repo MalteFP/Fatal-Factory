@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 	
 
 func just_placed():
+	placed = true
 	conveyor1 = conveyor_curved.new()
 	add_child(conveyor1)
 	conveyor1.placed = true

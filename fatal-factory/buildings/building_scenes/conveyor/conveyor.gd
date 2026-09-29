@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 				item.global_position = next_pos
 		
 		for item in WorldItemHolder.items_in_world:
-			if item and item.global_position.distance_to(start_marker.global_position) < 8:
+			if item and item.global_position.distance_to(start_marker.global_position) <= 4:
 				items.append(item)
 				WorldItemHolder.items_in_world.erase(item)
 	queue_redraw()
@@ -76,4 +76,3 @@ func just_placed():
 	placed = true
 	start_arrow.visible = false
 	goal_arrow.visible = false
-	

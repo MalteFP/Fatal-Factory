@@ -15,7 +15,7 @@ func setup(item: Item):
 	icon = item.texture
 
 func _make_custom_tooltip(_for_text):
-	var l = load("res://builder_tooltip.tscn")
+	var l = load("res://scenes/builder_tooltip.tscn")
 	var label = l.instantiate()
 	var rich_text_label: RichTextLabel = label.get_node("MarginContainer/VBoxContainer/RichTextLabel")
 	rich_text_label.append_text(item_discription)

@@ -18,7 +18,7 @@ func _ready() -> void:
 	deleting = false
 	$DeletionMask/CollisionShape2D/Polygon2D.visible = false
 	$DeletionMask/CollisionShape2D.disabled = true
-
+	$DeletionMask.collision_mask = (1 << 0)
 
 func _process(_delta: float) -> void:
 	rect_pos = cell_to_world(get_mouse_cell())
@@ -103,13 +103,14 @@ func build():
 			var id = c[1].id
 			Inventory.items[id] -= c[0]
 		if Input.is_action_pressed("multi place"):
-			var new_building = currently_building.duplicate()
+			var new_building = load(currently_building.scene_file_path).instantiate()
+			new_building.global_position = currently_building.global_position
+			new_building.rotation = currently_building.rotation
+			new_building.scale = currently_building.scale
 			add_child(new_building)
 			new_building.just_placed()
-			new_building.placed = true
 		else:
 			currently_building.just_placed()
-			currently_building.placed = true
 			currently_building = null
 	elif currently_building:
 		var blinkTween = get_tree().create_tween()

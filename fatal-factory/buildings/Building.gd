@@ -35,16 +35,17 @@ func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, buildi
 	build_collision_rect()
 	
 	sprite.play("default")
-	
 
 func just_placed():
-	pass
+	placed = true
+	print("placed")
 
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
 	rect.size = size * 16 - Vector2i(1,1)
 	collision_shape.position = size * 8
 	collision_shape.set_shape(rect)
+	area.collision_layer = (1 << 0)
 
 
 func build_children():

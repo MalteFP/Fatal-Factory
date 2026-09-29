@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eibl2ofsn68q" path="res://textures/tilemaps/grounds.png" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b1t3cvlmc54hh" path="res://scenes/builder.tscn" id="2_k0juu"]
 [ext_resource type="Script" uid="uid://50rca4te272j" path="res://scenes/camera_2d.gd" id="3_71j4m"]
+[ext_resource type="Texture2D" uid="uid://b4mcil8vsm4f1" path="res://textures/tilemaps/ores.png" id="3_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("2_71j4m")
@@ -16,16 +17,37 @@ texture = ExtResource("2_71j4m")
 6:0/0 = 0
 7:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7141"]
+texture = ExtResource("3_qfnet")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_q2j6n"]
 physics_layer_0/collision_layer = 15
 physics_layer_0/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_k0juu")
+sources/1 = SubResource("TileSetAtlasSource_i7141")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
+texture = ExtResource("3_qfnet")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lxali"]
+sources/0 = SubResource("TileSetAtlasSource_71j4m")
 
 [node name="world" type="Node2D" unique_id=2136294219]
 script = ExtResource("1_k0juu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=690846324]
 tile_set = SubResource("TileSet_q2j6n")
+
+[node name="OreTileMapLayer" type="TileMapLayer" parent="." unique_id=1687843216]
+tile_set = SubResource("TileSet_lxali")
 
 [node name="builder" parent="." unique_id=485209350 instance=ExtResource("2_k0juu")]
 
