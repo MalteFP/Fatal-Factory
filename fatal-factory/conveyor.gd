@@ -57,6 +57,7 @@ func create_arrows() ->void:
 	add_child(start_arrow)
 	start_arrow.position = start_marker.position
 	start_arrow.rotation_degrees = 180
+	start_arrow.z_index = 10
 	
 	goal_arrow = Sprite2D.new()
 	goal_arrow.texture = load("res://arrow.png")
@@ -64,7 +65,8 @@ func create_arrows() ->void:
 	add_child(goal_arrow)
 	goal_arrow.position = goal_marker.position
 	goal_arrow.rotation_degrees = 180
-
+	goal_arrow.z_index = 10
+	
 func delete():
 	for item in items:
 		item.queue_free()
@@ -72,7 +74,6 @@ func delete():
 
 func just_placed():
 	placed = true
-	print(start_arrow)
 	start_arrow.visible = false
 	goal_arrow.visible = false
 	

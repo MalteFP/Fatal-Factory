@@ -1,21 +1,32 @@
 [gd_scene format=3 uid="uid://cgebneytea0fj"]
 
-[ext_resource type="Texture2D" uid="uid://ckmclplh8tquc" path="res://textures/tilemaps/pixil-frame-0 (12).png" id="1_4wyf3"]
 [ext_resource type="Script" uid="uid://8kfhro51ybnp" path="res://scenes/world.gd" id="1_k0juu"]
+[ext_resource type="Texture2D" uid="uid://eibl2ofsn68q" path="res://textures/tilemaps/grounds.png" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://b1t3cvlmc54hh" path="res://scenes/builder.tscn" id="2_k0juu"]
 [ext_resource type="Script" uid="uid://50rca4te272j" path="res://scenes/camera_2d.gd" id="3_71j4m"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
-texture = ExtResource("1_4wyf3")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
+texture = ExtResource("2_71j4m")
+0:0/next_alternative_id = 2
 0:0/0 = 0
+1:0/next_alternative_id = 2
 1:0/0 = 0
+2:0/next_alternative_id = 2
 2:0/0 = 0
+3:0/next_alternative_id = 2
 3:0/0 = 0
+4:0/next_alternative_id = 2
 4:0/0 = 0
+5:0/next_alternative_id = 2
 5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_q2j6n"]
-sources/0 = SubResource("TileSetAtlasSource_fj7yv")
+physics_layer_0/collision_layer = 15
+physics_layer_0/collision_mask = 15
+sources/0 = SubResource("TileSetAtlasSource_qfnet")
 
 [node name="world" type="Node2D" unique_id=2136294219]
 script = ExtResource("1_k0juu")

@@ -4,9 +4,24 @@ var noise_map = FastNoiseLite.new()
 
 @onready var tilemap = $TileMapLayer
 
-var frequency = 0.1
+var frequency = 0.01
 
 var size = Vector2(100,100)
+
+var rotations: Array = [
+	0,
+	TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H,
+	TileSetAtlasSource.TRANSFORM_FLIP_H | TileSetAtlasSource.TRANSFORM_FLIP_V,
+	TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V
+]
+
+var thresholds: Array[Dictionary] = [
+	{"limit": 0.2, "tile": Vector2i(0,0)},
+	{"limit": 0.4, "tile": Vector2i(2,0)},
+	{"limit": 0.5, "tile": Vector2i(5,0)},
+	{"limit": 0.6, "tile": Vector2i(6,0)},
+	{"limit": 1, "tile": Vector2i(7,0)}
+]
 
 func _ready() -> void:
 	var item = Iron.new()
@@ -18,7 +33,7 @@ func _ready() -> void:
 	
 	
 	noise_map.seed = randi()
-	noise_map.noise_type = FastNoiseLite.TYPE_VALUE
+	noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	noise_map.frequency = frequency
 	
 	for x in range(size.x):
@@ -26,17 +41,15 @@ func _ready() -> void:
 			var noise_value = (noise_map.get_noise_2d(x, y) + 1)/2
 			var atlas_coords: Vector2i = get_tile_type(noise_value)
 			
-			tilemap.set_cell(Vector2i(x, y) - Vector2i(size) / 2, 0, atlas_coords)
-			
-	
-	
+			tilemap.set_cell(
+				Vector2i(x, y) - Vector2i(size) / 2,
+				0,
+				atlas_coords,
+				rotations.pick_random()
+				)
 
 func get_tile_type(noise_value: float) -> Vector2i:
-	if noise_value > 0.9:
-		return Vector2i(0,0)
-	elif noise_value > 0.4:
-		return Vector2i(1,0)
-	elif noise_value > 0.2:
-		return Vector2i(2,0)
-	else:
-		return Vector2i(3,0)
+	for treshold in thresholds:
+		if noise_value < treshold["limit"]:
+			return treshold["tile"]
+	return Vector2i(7,0)

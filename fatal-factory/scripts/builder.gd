@@ -78,30 +78,31 @@ func set_building(building_scene: PackedScene):
 
 
 func is_overlapping(area: Area2D) -> bool:
-	return area.has_overlapping_areas()
+	if 
+	return area.has_overlapping_bodies()
 
 
 func build():
-	for c in currently_building.cost:
-		var id = c[1].id
-		if Inventory.items[id] < c[0]:
-			var blinkTween = get_tree().create_tween()
-			blinkTween.tween_property(
-				currently_building.sprite,
-				"self_modulate",
-				Color(1.0, 0.0, 0.0, 1.0),
-				0.1
-				)
-			blinkTween.chain().tween_property(
-				currently_building.sprite,
-				"self_modulate",
-				Color(1.0, 1.0, 1.0, 1.0),
-				0.1)
-			return
-	for c in currently_building.cost:
-		var id = c[1].id
-		Inventory.items[id] -= c[0]
 	if currently_building and not is_overlapping(currently_building.area):
+		for c in currently_building.cost:
+			var id = c[1].id
+			if Inventory.items[id] < c[0]:
+				var blinkTween = get_tree().create_tween()
+				blinkTween.tween_property(
+					currently_building.sprite,
+					"self_modulate",
+					Color(1.0, 0.0, 0.0, 1.0),
+					0.1
+					)
+				blinkTween.chain().tween_property(
+					currently_building.sprite,
+					"self_modulate",
+					Color(1.0, 1.0, 1.0, 1.0),
+					0.1)
+				return
+		for c in currently_building.cost:
+			var id = c[1].id
+			Inventory.items[id] -= c[0]
 		if Input.is_action_pressed("multi place"):
 			var new_building = currently_building.duplicate()
 			add_child(new_building)
