@@ -52,7 +52,7 @@ func create_markers() -> void:
 
 func create_arrows() ->void:
 	start_arrow = Sprite2D.new()
-	start_arrow.texture = load("res://arrow.png")
+	start_arrow.texture = load("res://textures/buildings/conveyor/arrow.png")
 	start_arrow.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
 	add_child(start_arrow)
 	start_arrow.position = start_marker.position
@@ -60,7 +60,7 @@ func create_arrows() ->void:
 	start_arrow.z_index = 10
 	
 	goal_arrow = Sprite2D.new()
-	goal_arrow.texture = load("res://arrow.png")
+	goal_arrow.texture = load("res://textures/buildings/conveyor/arrow.png")
 	goal_arrow.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
 	add_child(goal_arrow)
 	goal_arrow.position = goal_marker.position

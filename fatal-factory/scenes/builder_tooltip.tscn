@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c50vhh4n4a88n"]
 
-[ext_resource type="Script" uid="uid://cx57m12utrn7r" path="res://builder_tooltip.gd" id="1_ojdej"]
+[ext_resource type="Script" uid="uid://cx57m12utrn7r" path="res://scenes/builder_tooltip.gd" id="1_ojdej"]
 [ext_resource type="Theme" uid="uid://b7l4lp5uv08ow" path="res://textures/menu/tooltip_theme.tres" id="1_pkpxb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkpxb"]

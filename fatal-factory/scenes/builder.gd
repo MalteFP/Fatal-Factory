@@ -78,8 +78,7 @@ func set_building(building_scene: PackedScene):
 
 
 func is_overlapping(area: Area2D) -> bool:
-	if 
-	return area.has_overlapping_bodies()
+	return area.has_overlapping_bodies() || area.has_overlapping_areas() 
 
 
 func build():

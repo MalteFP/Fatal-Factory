@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cy21ahh33nivo"]
 
-[ext_resource type="Script" uid="uid://dobtd3h1rli11" path="res://inventory_window.gd" id="1_67x6n"]
+[ext_resource type="Script" uid="uid://dobtd3h1rli11" path="res://scenes/inventory_window.gd" id="1_67x6n"]
 
 [node name="inventory_window" type="Window" unique_id=1635128554 groups=["inventory_window"]]
 transparent_bg = true

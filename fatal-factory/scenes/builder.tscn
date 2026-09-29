@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b1t3cvlmc54hh"]
 
-[ext_resource type="Script" uid="uid://ltqustuwhqmu" path="res://scripts/builder.gd" id="1_h1ki1"]
-[ext_resource type="PackedScene" uid="uid://dumdepe87um6" path="res://building_window.tscn" id="2_glllh"]
-[ext_resource type="PackedScene" uid="uid://cy21ahh33nivo" path="res://inventory_window.tscn" id="3_rcluh"]
+[ext_resource type="Script" uid="uid://ltqustuwhqmu" path="res://scenes/builder.gd" id="1_h1ki1"]
+[ext_resource type="PackedScene" uid="uid://dumdepe87um6" path="res://scenes/building_window.tscn" id="2_glllh"]
+[ext_resource type="PackedScene" uid="uid://cy21ahh33nivo" path="res://scenes/inventory_window.tscn" id="3_rcluh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2j6n"]
 size = Vector2(15, 15)
