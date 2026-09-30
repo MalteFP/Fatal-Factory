@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cr36m1xgpfa74"]
+
+[ext_resource type="Texture2D" uid="uid://csrn2dv2bceg1" path="res://textures/buildings/generator/pixil-frame-0(16).png" id="1_cj2jn"]
+[ext_resource type="Texture2D" uid="uid://cut4eyugeapls" path="res://textures/buildings/generator/pixil-frame-0(15).png" id="2_lgbic"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cj2jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lgbic")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

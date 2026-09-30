@@ -5,7 +5,6 @@
 [ext_resource type="StyleBox" uid="uid://es21lkynsltc" path="res://textures/menu/yellow_style_box_texture.tres" id="3_fmu5a"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0omi4"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
 texture = SubResource("CompressedTexture2D_0omi4")
@@ -25,7 +24,6 @@ texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_466ly"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52mx2"]
 texture = SubResource("CompressedTexture2D_466ly")
@@ -37,7 +35,6 @@ region_rect = Rect2(0, 0, 128, 128)
 modulate_color = Color(0.45840496, 0.45840508, 0.4584049, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpnaw"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2da3m"]
 texture = SubResource("CompressedTexture2D_tpnaw")
@@ -48,7 +45,6 @@ texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fmu5a"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4r8f"]
 texture = SubResource("CompressedTexture2D_fmu5a")
@@ -59,7 +55,6 @@ texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uh2d4"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kevrn"]
 texture = SubResource("CompressedTexture2D_uh2d4")
@@ -70,7 +65,6 @@ texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf8ra"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr4lk"]
 texture = SubResource("CompressedTexture2D_tf8ra")
@@ -95,7 +89,6 @@ gradient = SubResource("Gradient_uh2d4")
 width = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2l2q"]
-load_path = "res://.godot/imported/button_square_flat.png-f69916a3a38e71898c4bfb1a0d85590b.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fmu5a"]
 texture = SubResource("CompressedTexture2D_a2l2q")
