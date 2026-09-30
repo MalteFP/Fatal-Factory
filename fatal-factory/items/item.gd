@@ -10,6 +10,8 @@ var title_name: String
 var id: int
 var discription: String
 
+var picked_up: bool = false
+
 func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, item_discription: String):
 	z_index = 1
 	title_name = item_name
@@ -30,9 +32,16 @@ func build_children():
 	collision_shape = CollisionShape2D.new()
 	area.add_child(collision_shape)
 	build_collision_rect()
-
+	
+	
+	area.input_event.connect(_on_area_input_event)
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
 	rect.size = Vector2(12,12)
 	collision_shape.set_shape(rect)
 	
+func _on_area_input_event(_viewport, event, _shape_idx):
+	if event is InputEvent and Input.is_action_just_pressed("click") and not picked_up:
+		picked_up = true
+		Inventory.item_collected(self, 1)
+		queue_free()
