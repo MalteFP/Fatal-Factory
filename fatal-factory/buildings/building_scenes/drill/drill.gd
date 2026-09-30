@@ -5,6 +5,7 @@ var conveyor1: conveyor_curved
 var spawn_per_minute: int
 var secounds_per_spawn: float
 
+
 var production_class
 
 var ore_type_tresholds: Array[Dictionary] = [
@@ -21,13 +22,14 @@ func _ready() -> void:
 	secounds_per_spawn = 60 / spawn_per_minute
 	
 	
+	
 	z_index = 10
 	setup(
 		Vector2i(3,2),
 		load("res://textures/buildings/drill/drill_sprite_frames.tres"),
 		load("res://textures/buildings/drill/drill.png"),
-		"Generates Per Secound: 7 Iron \n Costs: 90 wood \n Uses: 10 Watt",
-		[
+		"Generates Per Secound: 7 Iron \n Costs: 90 wood \n Uses: 1 Energy pr. ore",
+		[ 
 			[15,Raw_Iron.new()]
 			],
 		[
@@ -42,18 +44,25 @@ func _process(delta: float) -> void:
 	if placed:
 		time_since_spawn += delta
 		
+		
+			
+			
 		if time_since_spawn > secounds_per_spawn:
 			for item in conveyor1.items:
-				if item.global_position.distance_to(to_global(Vector2(8,16))) < 8:
+				if item.global_position.distance_to(to_global(Vector2(8,16))) < 8 or Inventory.items[5] < 1:
 					sprite.pause()
 					return
 			sprite.play("default")
 			time_since_spawn = 0
+			Inventory.item_collected(Energy.new(),-1)
 			var item = production_class.new()
 			add_child(item)
 			item.z_index = -1
 			item.position = Vector2(8,16)
 			WorldItemHolder.items_in_world.append(item)
+		
+		
+		
 		
 
 func just_placed():

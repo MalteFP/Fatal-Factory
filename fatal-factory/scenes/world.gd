@@ -57,6 +57,8 @@ func _ready() -> void:
 	Inventory.item_collected(item, 50)
 	item = Raw_Uranium.new()
 	Inventory.item_collected(item, 500)
+	item = Energy.new()
+	Inventory.item_collected(item, 50)
 	
 	var hub = Hub.new()
 	add_child(hub)

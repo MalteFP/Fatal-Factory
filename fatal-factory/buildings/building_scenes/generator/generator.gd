@@ -21,10 +21,10 @@ func _ready() -> void:
 		load("res://textures/buildings/generator/Generator Passive.png"),
 		"Geeenerates Per Secound: 50 Watts \n Costs: 15 Iron \n Uses: 1 Animal",
 		[
-			[15,Iron.new()]
+			[15,Raw_Iron.new()]
 			],
 		[
-			[spawn_per_minute, Iron.new()]
+			[spawn_per_minute, Energy.new()]
 			]
 		)
 	
@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 		time_since_spawn += delta
 		if time_since_spawn > secounds_per_spawn:
 			Inventory.item_collected(Energy.new(),1)
+			time_since_spawn = 0
 		
 		
 		
