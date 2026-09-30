@@ -8,12 +8,11 @@ func _ready() -> void:
 func _update_columns():
 	var cell_width = 100
 	grid.columns = max(1, floori(size.x / cell_width))
-
+#Lundses was here
 
 func _process(_delta: float) -> void:
-	for item in grid.get_children():
-		var index = grid.get_children().find(item)
-		item.text = str(Inventory.items[index])
+	for button in grid.get_children():
+		button.text = str(Inventory.items[button.id])
 
 
 func create_new_item(item: Item) -> void:

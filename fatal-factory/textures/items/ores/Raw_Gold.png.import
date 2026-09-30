@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnswjb0xnyh5w"
-path="res://.godot/imported/temp_ore.png-07e867b3e199cc646b22c3000d52732e.ctex"
+uid="uid://dw5gqsv2lnlum"
+path="res://.godot/imported/Raw_Gold.png-8a0d0ed84c97fabb40f1978beb871d97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/items/temp_ore.png"
-dest_files=["res://.godot/imported/temp_ore.png-07e867b3e199cc646b22c3000d52732e.ctex"]
+source_file="res://textures/items/ores/Raw_Gold.png"
+dest_files=["res://.godot/imported/Raw_Gold.png-8a0d0ed84c97fabb40f1978beb871d97.ctex"]
 
 [params]
 

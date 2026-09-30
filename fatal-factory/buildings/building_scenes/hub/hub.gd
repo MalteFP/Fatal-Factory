@@ -12,7 +12,7 @@ func _ready() -> void:
 		load("res://textures/buildings/hub/hub.png"),
 		"The place to store your stuff",
 		[
-			[10,Iron.new()]
+			[10,Raw_Iron.new()]
 			]
 		)
 

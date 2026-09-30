@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://1oyc6t0uowki"]
+
+[ext_resource type="Script" uid="uid://b52xibt61k5g4" path="res://items/item_scenes/Raw_Gold/Raw_Gold.gd" id="1_b8neb"]
+
+[node name="RawGold" type="Node2D" unique_id=1047746317]
+script = ExtResource("1_b8neb")

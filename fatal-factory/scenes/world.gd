@@ -2,8 +2,10 @@ extends Node2D
 
 
 
+
 var noise_map = FastNoiseLite.new()
 var ore_noise_map = FastNoiseLite.new()
+var biome_noise_map = FastNoiseLite.new()
 
 @onready var tilemap = $TileMapLayer
 @onready var ore_tilemap = $OreTileMapLayer
@@ -13,6 +15,7 @@ var generated_tiles: Dictionary = {}
 
 var frequency = 0.005
 var ore_frequency = 0.03
+var biome_frequency = 0.005
 
 var rotations: Array = [
 	0,
@@ -23,7 +26,7 @@ var rotations: Array = [
 
 var thresholds: Array[Dictionary] = [
 	{"limit": 0.2, "tile": Vector2i(0,0)},
-	{"limit": 0.6, "tile": Vector2i(2,0)},
+	{"limit": 0.67, "tile": Vector2i(1,0)},
 	{"limit": 0.7, "tile": Vector2i(5,0)},
 	{"limit": 0.75, "tile": Vector2i(6,0)},
 	{"limit": 1, "tile": Vector2i(7,0)}
@@ -40,12 +43,20 @@ var ore_type_tresholds: Array[Dictionary] = [
 	{"max distance": 10000000, "tile": Vector2i(3,0)}
 ]
 
+var biome_grass_tresholds: Array[Dictionary] = [
+	{"limit": 0.33, "tile": Vector2i(1,0)},
+	{"limit": 0.8, "tile": Vector2i(2,0)},
+	{"limit": 1, "tile": Vector2i(3,0)},
+]
+
 func _process(_delta: float) -> void:
 	generate_visible_tiles()
 
 func _ready() -> void:
-	var item = Iron.new()
+	var item = Raw_Iron.new()
 	Inventory.item_collected(item, 50)
+	item = Raw_Uranium.new()
+	Inventory.item_collected(item, 500)
 	
 	var hub = Hub.new()
 	add_child(hub)
@@ -64,18 +75,28 @@ func _ready() -> void:
 	ore_noise_map.frequency = ore_frequency
 	ore_noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
 	ore_noise_map.fractal_octaves = 2
+	
+	biome_noise_map.seed = randi()
+	biome_noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
+	biome_noise_map.frequency = biome_frequency
+	biome_noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
+	biome_noise_map.fractal_octaves = 1
 
 
-func get_tile_type(noise_value: float, ore_noise_value: float, coords: Vector2) -> Vector2i:
+func get_tile_type(noise_value: float, ore_noise_value: float, biome_noise_value: float, coords: Vector2) -> Vector2i:
 	for treshold in ore_thresholds:
 		if ore_noise_value < treshold["limit"]:
 			place_ore(coords)
 			return treshold["tile"]
 	for treshold in thresholds:
 		if noise_value < treshold["limit"]:
+			if treshold["tile"] == Vector2i(1,0):
+				for biome_treshold in biome_grass_tresholds:
+					if biome_noise_value < biome_treshold["limit"]:
+						return biome_treshold["tile"]
 			return treshold["tile"]
 	return Vector2i(7,0)
-
+#Lundses was here
 
 func generate_visible_tiles():
 	var viewport_size = get_viewport_rect().size * (Vector2(1,1) / camera.zoom) 
@@ -104,7 +125,8 @@ func generate_visible_tiles():
 			
 			var noise_value = (noise_map.get_noise_2d(x, y) + 1)/2
 			var ore_noise_value = (ore_noise_map.get_noise_2d(x, y) + 1)/2
-			var atlas_coords: Vector2i = get_tile_type(noise_value, ore_noise_value, Vector2(x,y))
+			var biome_noise_value = (biome_noise_map.get_noise_2d(x,y) + 1)/2
+			var atlas_coords: Vector2i = get_tile_type(noise_value, ore_noise_value, biome_noise_value, Vector2(x,y))
 			tilemap.set_cell(
 				Vector2i(x, y),
 				0,
