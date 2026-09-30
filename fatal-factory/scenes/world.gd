@@ -2,6 +2,7 @@ extends Node2D
 
 
 
+
 var noise_map = FastNoiseLite.new()
 var ore_noise_map = FastNoiseLite.new()
 var biome_noise_map = FastNoiseLite.new()

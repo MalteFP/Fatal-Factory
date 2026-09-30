@@ -40,7 +40,7 @@ texture = ExtResource("3_qfnet")
 [sub_resource type="TileSet" id="TileSet_lxali"]
 sources/0 = SubResource("TileSetAtlasSource_71j4m")
 
-[node name="world" type="Node2D" unique_id=2136294219]
+[node name="world" type="Node2D" unique_id=2136294219 groups=["world"]]
 script = ExtResource("1_k0juu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=690846324]
