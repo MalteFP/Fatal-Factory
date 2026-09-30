@@ -9,7 +9,7 @@ func _ready() -> void:
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.png"),
 		"Transfers items",
 		[
-			[5,Iron.new()]
+			[5,Raw_Iron.new()]
 			]
 		)
 	goal_arrow.rotation_degrees = 90

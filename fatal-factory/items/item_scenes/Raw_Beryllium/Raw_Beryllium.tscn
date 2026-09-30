@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cg6rrdaodx58d"]
+
+[ext_resource type="Script" uid="uid://cvlipg56dxe13" path="res://items/item_scenes/Raw_Beryllium/Raw_Beryllium.gd" id="1_d2lan"]
+
+[node name="RawBeryllium" type="Node2D" unique_id=2078717264]
+script = ExtResource("1_d2lan")

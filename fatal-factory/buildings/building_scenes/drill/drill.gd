@@ -5,11 +5,18 @@ var conveyor1: conveyor_curved
 var spawn_per_minute: int
 var secounds_per_spawn: float
 
+var production_class
+
+var ore_type_tresholds: Array[Dictionary] = [
+	{"max distance": 100, "ore": Raw_Iron},
+	{"max distance": 500, "ore": Raw_Gold},
+	{"max distance": 1000, "ore": Raw_Beryllium},
+	{"max distance": 10000000, "ore": Raw_Uranium}
+]
+#Lundses was here
 @export var production_item: PackedScene
 
 func _ready() -> void:
-	
-	
 	
 	spawn_per_minute = 20
 	secounds_per_spawn = 60 / spawn_per_minute
@@ -22,10 +29,10 @@ func _ready() -> void:
 		load("res://textures/buildings/drill/drill.png"),
 		"Generates Per Secound: 7 Iron \n Costs: 90 wood \n Uses: 10 Watt",
 		[
-			[15,Iron.new()]
+			[15,Raw_Iron.new()]
 			],
 		[
-			[spawn_per_minute, Iron.new()]
+			[spawn_per_minute, Raw_Iron.new()]
 			]
 		)
 	
@@ -43,13 +50,13 @@ func _process(delta: float) -> void:
 					return
 			sprite.play("default")
 			time_since_spawn = 0
-			var item = Iron.new()
+			var item = production_class.new()
 			add_child(item)
 			item.z_index = -1
 			item.position = Vector2(8,16)
 			WorldItemHolder.items_in_world.append(item)
 		
-	
+	#Lundses was here
 
 func just_placed():
 	placed = true
@@ -70,3 +77,8 @@ func just_placed():
 	
 	conveyor1.just_placed()
 	conveyor2.just_placed()
+	
+	for ore in ore_type_tresholds:
+		if global_position.distance_to(Vector2(0,0)) < ore["max distance"] * 16:
+			production_class = ore["ore"]
+			break

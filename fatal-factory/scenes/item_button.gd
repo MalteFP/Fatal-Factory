@@ -3,6 +3,7 @@ class_name Item_button
 
 var item_name: String
 var item_discription: String
+var id: int
 
 func setup(item: Item):
 	custom_maximum_size = Vector2(100,100)
@@ -13,7 +14,8 @@ func setup(item: Item):
 	item_name = item.title_name
 	item_discription = item.discription
 	icon = item.texture
-
+	id = item.id
+#Lundses was here
 func _make_custom_tooltip(_for_text):
 	var l = load("res://scenes/builder_tooltip.tscn")
 	var label = l.instantiate()

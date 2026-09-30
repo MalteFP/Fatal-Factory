@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3npotuxrjp4n"]
+
+[ext_resource type="Script" uid="uid://ctr4d8l6vqrw" path="res://items/item_scenes/Raw_Uranium/Raw_Uranium.gd" id="1_hl6w2"]
+
+[node name="RawUranium" type="Node2D" unique_id=1597325654]
+script = ExtResource("1_hl6w2")
