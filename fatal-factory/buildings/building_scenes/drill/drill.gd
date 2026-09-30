@@ -13,7 +13,6 @@ var ore_type_tresholds: Array[Dictionary] = [
 	{"max distance": 1000, "ore": Raw_Beryllium},
 	{"max distance": 10000000, "ore": Raw_Uranium}
 ]
-#Lundses was here
 @export var production_item: PackedScene
 
 func _ready() -> void:
@@ -56,7 +55,6 @@ func _process(delta: float) -> void:
 			item.position = Vector2(8,16)
 			WorldItemHolder.items_in_world.append(item)
 		
-	#Lundses was here
 
 func just_placed():
 	placed = true
@@ -79,11 +77,9 @@ func just_placed():
 	conveyor2.just_placed()
 	
 	var world = get_tree().get_first_node_in_group("world")
-	print((world.ore_noise_map.get_noise_2d(global_position.x / 16, global_position.y / 16) + 1)/2)
 	if(world.ore_noise_map.get_noise_2d(global_position.x / 16 + 2, global_position.y / 16 + 1) + 1)/2 > 0.2:
-		production_class = Raw_Iron
+		production_class = Dirt
 	else:
-		print("out of area")
 		for ore in ore_type_tresholds:
 			if global_position.distance_to(Vector2(0,0)) < ore["max distance"] * 16:
 				production_class = ore["ore"]
