@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvh2lwoqieawn"]
+
+[ext_resource type="Script" uid="uid://4udbbky4a0cq" path="res://items/item_scenes/Dirt/Dirt.gd" id="1_b5753"]
+
+[node name="Dirt" type="Node2D" unique_id=1421718185]
+script = ExtResource("1_b5753")

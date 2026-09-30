@@ -18,7 +18,6 @@ func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, i
 	id = item_id
 	build_children()
 	sprite.texture = texture
-#Lundses was here
 func build_children():
 	sprite = Sprite2D.new()
 	add_child(sprite)
