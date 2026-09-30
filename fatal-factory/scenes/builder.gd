@@ -85,7 +85,7 @@ func build():
 	if currently_building and not is_overlapping(currently_building.area):
 		for c in currently_building.cost:
 			var id = c[1].id
-			if Inventory.items[id] < c[0]:
+			if not Inventory.items.keys().has(id) or Inventory.items[id] < c[0]:
 				var blinkTween = get_tree().create_tween()
 				blinkTween.tween_property(
 					currently_building.sprite,

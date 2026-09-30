@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfqqikhef8vyr"]
+
+[ext_resource type="Script" uid="uid://bi23fopsijy5e" path="res://buildings/building_scenes/generator/generator.gd" id="1_ynlba"]
+
+[node name="Generator" type="Node2D" unique_id=2067872258]
+script = ExtResource("1_ynlba")

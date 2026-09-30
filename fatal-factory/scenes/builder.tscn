@@ -23,7 +23,9 @@ polygon = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=739234124]
 
 [node name="building_Window" parent="." unique_id=822202477 instance=ExtResource("2_glllh")]
+position = Vector2i(1000, 36)
 
 [node name="inventory_window" parent="." unique_id=1635128554 instance=ExtResource("3_rcluh")]
+position = Vector2i(20, 36)
 
 [connection signal="item_rect_changed" from="DeletionMask/CollisionShape2D/Polygon2D" to="." method="_on_polygon_2d_item_rect_changed"]

@@ -53,8 +53,12 @@ func _process(_delta: float) -> void:
 	generate_visible_tiles()
 
 func _ready() -> void:
-	var item = Raw_Iron.new()
+	var item = Dirt.new()
 	Inventory.item_collected(item, 50)
+
+	item = Energy.new()
+	Inventory.item_collected(item, 50)
+
 	
 	var hub = Hub.new()
 	add_child(hub)
