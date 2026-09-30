@@ -1,5 +1,5 @@
 extends Conveyor
-class_name conveyor_curved
+class_name Conveyor_curved
 	
 
 func _ready() -> void:

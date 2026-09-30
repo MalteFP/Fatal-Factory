@@ -1,7 +1,7 @@
 extends Building
 var time_since_spawn: float = 0
 var time_for_spawn: float
-var conveyor1: conveyor_curved
+var conveyor1: Conveyor_curved
 var spawn_per_minute: int
 var secounds_per_spawn: float
 
@@ -67,7 +67,8 @@ func _process(delta: float) -> void:
 
 func just_placed():
 	placed = true
-	conveyor1 = conveyor_curved.new()
+	conveyor1 = Conveyor_curved.new()
+	conveyor1.partial_building = true
 	add_child(conveyor1)
 	conveyor1.placed = true
 	conveyor1.z_index = -10
@@ -75,7 +76,8 @@ func just_placed():
 	conveyor1.rotation_degrees = 180
 	conveyor1.position = Vector2(0,32)
 	
-	var conveyor2 = conveyor_curved.new()
+	var conveyor2 = Conveyor_curved.new()
+	conveyor2.partial_building = true
 	add_child(conveyor2)
 	conveyor2.placed = true
 	conveyor2.z_index = -10

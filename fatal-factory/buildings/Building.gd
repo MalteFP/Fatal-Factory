@@ -21,6 +21,7 @@ var mirrorable: bool
 
 var placed = false
 
+var partial_building: bool = false
 
 func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_icon: CompressedTexture2D, building_tooltip: String, building_cost: Array[Array], building_production: Array[Array] = []) -> void:
 	size = building_size
@@ -34,11 +35,14 @@ func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, buildi
 	sprite.sprite_frames = sprite_frames
 	build_collision_rect()
 	
+	area.mouse_shape_entered.connect(_mouse_entered_area)
+	area.mouse_shape_exited.connect(_mouse_exited_area)
+	area.input_event.connect(_on_area_input_event)
+	
 	sprite.play("default")
 
 func just_placed():
 	placed = true
-	print("placed")
 
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
@@ -63,3 +67,19 @@ func delete():
 	for c in cost:
 		Inventory.item_collected(c[1], c[0])
 	queue_free()
+
+func _mouse_entered_area(_shape_idx):
+	if partial_building:
+		return
+	sprite.modulate = Color(0.622, 0.622, 0.622, 1.0)
+
+func _mouse_exited_area(_shape_idx):
+	if partial_building:
+		return
+	sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+func _on_area_input_event(_viewport, event, _shape_idx):
+	if partial_building:
+		return
+	if event is InputEvent and Input.is_action_just_pressed("click"):
+		print("clicked")
