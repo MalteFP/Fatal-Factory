@@ -11,7 +11,7 @@ var ore_noise_map = FastNoiseLite.new()
 
 var generated_tiles: Dictionary = {}
 
-var frequency = 0.01
+var frequency = 0.005
 var ore_frequency = 0.03
 
 var rotations: Array = [
@@ -23,9 +23,9 @@ var rotations: Array = [
 
 var thresholds: Array[Dictionary] = [
 	{"limit": 0.2, "tile": Vector2i(0,0)},
-	{"limit": 0.4, "tile": Vector2i(2,0)},
-	{"limit": 0.5, "tile": Vector2i(5,0)},
-	{"limit": 0.6, "tile": Vector2i(6,0)},
+	{"limit": 0.6, "tile": Vector2i(2,0)},
+	{"limit": 0.7, "tile": Vector2i(5,0)},
+	{"limit": 0.75, "tile": Vector2i(6,0)},
 	{"limit": 1, "tile": Vector2i(7,0)}
 ]
 
@@ -55,6 +55,9 @@ func _ready() -> void:
 	noise_map.seed = randi()
 	noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	noise_map.frequency = frequency
+	noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
+	noise_map.fractal_octaves = 2.5
+	
 	
 	ore_noise_map.seed = randi()
 	ore_noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
