@@ -12,7 +12,7 @@ func _ready() -> void:
 			[5,Raw_Iron.new()]
 			]
 		)
-	start_arrow.position -= Vector2(0,8)
+	#start_arrow.position -= Vector2(0,8)
 
 func create_markers() -> void:
 	goal_marker = Node2D.new()

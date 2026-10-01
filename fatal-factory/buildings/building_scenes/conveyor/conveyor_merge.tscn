@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfdjlfg1go246"]
+
+[ext_resource type="Script" uid="uid://b2k6vi72hma46" path="res://buildings/building_scenes/conveyor/conveyor_merge.gd" id="1_xdiji"]
+
+[node name="Conveyor_merge" type="Node2D" unique_id=609972242]
+script = ExtResource("1_xdiji")

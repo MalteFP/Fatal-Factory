@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hbu5t08a8q0w" path="res://buildings/building_scenes/conveyor/conveyor_straight.tscn" id="3_n0ama"]
 [ext_resource type="PackedScene" uid="uid://dntejqythnqvr" path="res://buildings/building_scenes/conveyor/conveyor_curved.tscn" id="4_w1jjm"]
 [ext_resource type="PackedScene" uid="uid://bfqqikhef8vyr" path="res://buildings/building_scenes/generator/generator.tscn" id="5_0rajq"]
+[ext_resource type="PackedScene" uid="uid://dfdjlfg1go246" path="res://buildings/building_scenes/conveyor/conveyor_merge.tscn" id="6_1pqkr"]
 
 [node name="building_Window" type="Window" unique_id=822202477]
 transparent_bg = true
@@ -53,3 +54,7 @@ building_scene = ExtResource("4_w1jjm")
 [node name="building_button4" parent="MarginContainer/ScrollContainer/GridContainer" unique_id=466092267 instance=ExtResource("2_nus2c")]
 layout_mode = 2
 building_scene = ExtResource("5_0rajq")
+
+[node name="building_button5" parent="MarginContainer/ScrollContainer/GridContainer" unique_id=451207648 instance=ExtResource("2_nus2c")]
+layout_mode = 2
+building_scene = ExtResource("6_1pqkr")

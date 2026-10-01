@@ -54,7 +54,7 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	var item = Raw_Iron.new()
-	Inventory.item_collected(item, 50)
+	Inventory.item_collected(item, 5000)
 	item = Raw_Uranium.new()
 	Inventory.item_collected(item, 500)
 	item = Energy.new()
