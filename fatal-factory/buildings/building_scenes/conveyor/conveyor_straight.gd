@@ -1,15 +1,16 @@
 extends Conveyor
-class_name conveyor_straight
+class_name Conveyor_straight
 	
 
 func _ready() -> void:
 	setup(
+		"Straight Conveyor",
 		Vector2i(1,1),
 		load("res://textures/buildings/conveyor/straight/conveyor_straight.tres"),
 		load("res://textures/buildings/conveyor/straight/conveyor_straight.png"),
 		"Transfers items",
 		[
-			[5,Raw_Iron.new()]
+			[5,Dirt.new()]
 			]
 		)
 	#start_arrow.position -= Vector2(0,8)

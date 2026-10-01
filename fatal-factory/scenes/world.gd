@@ -53,12 +53,16 @@ func _process(_delta: float) -> void:
 	generate_visible_tiles()
 
 func _ready() -> void:
+
 	var item = Raw_Iron.new()
 	Inventory.item_collected(item, 5000)
 	item = Raw_Uranium.new()
 	Inventory.item_collected(item, 500)
+	item = Dirt.new()
+	Inventory.item_collected(item, 50)
 	item = Energy.new()
 	Inventory.item_collected(item, 50)
+
 	
 	var hub = Hub.new()
 	add_child(hub)
@@ -135,6 +139,10 @@ func generate_visible_tiles():
 				atlas_coords,
 				rotations.pick_random()
 				)
+			if randi_range(0, 500) == 0:
+				var animal = Hamster.new()
+				add_child(animal)
+				animal.global_position = Vector2(x,y) * 16
 	
 	
 func place_ore(coords: Vector2):

@@ -5,7 +5,7 @@ var last_mouse_pos := Vector2.ZERO
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_MIDDLE:
 			dragging = event.pressed
 			last_mouse_pos = event.position
 

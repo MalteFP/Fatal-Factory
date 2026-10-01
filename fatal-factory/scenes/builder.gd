@@ -43,7 +43,7 @@ func cell_to_world(cell: Vector2i) -> Vector2:
 	return cell * cell_size
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		if deleting:
 			delete()
 		elif currently_building:
@@ -85,7 +85,7 @@ func build():
 	if currently_building and not is_overlapping(currently_building.area):
 		for c in currently_building.cost:
 			var id = c[1].id
-			if Inventory.items[id] < c[0]:
+			if not Inventory.items.keys().has(id) or Inventory.items[id] < c[0]:
 				var blinkTween = get_tree().create_tween()
 				blinkTween.tween_property(
 					currently_building.sprite,

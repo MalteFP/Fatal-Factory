@@ -2,18 +2,19 @@
 
 [ext_resource type="FontFile" uid="uid://ba36ckg3vgu64" path="res://textures/fonts/Pixelta.ttf" id="1_470mv"]
 [ext_resource type="Texture2D" uid="uid://cvy1eui4vpfub" path="res://textures/menu/button_square_flat_yellow.png" id="2_tpnaw"]
-[ext_resource type="StyleBox" uid="uid://es21lkynsltc" path="res://textures/menu/yellow_style_box_texture.tres" id="3_fmu5a"]
+[ext_resource type="StyleBox" uid="uid://es21lkynsltc" path="res://textures/menu/yellow_style_box_texture.tres" id="3_2da3m"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0omi4"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2da3m"]
+load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
-texture = SubResource("CompressedTexture2D_0omi4")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uh2d4"]
+texture = SubResource("CompressedTexture2D_2da3m")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
-modulate_color = Color(0.6789437, 0.6789437, 0.6789437, 1)
+modulate_color = Color(0.6803213, 0.6803213, 0.6803212, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8mdw"]
 texture = ExtResource("2_tpnaw")
@@ -23,56 +24,29 @@ texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_466ly"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kevrn"]
+load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52mx2"]
-texture = SubResource("CompressedTexture2D_466ly")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tf8ra"]
+texture = SubResource("CompressedTexture2D_kevrn")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
-modulate_color = Color(0.45840496, 0.45840508, 0.4584049, 1)
+modulate_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpnaw"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g4r8f"]
+load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2da3m"]
-texture = SubResource("CompressedTexture2D_tpnaw")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83md4"]
+texture = SubResource("CompressedTexture2D_g4r8f")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 128, 128)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fmu5a"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4r8f"]
-texture = SubResource("CompressedTexture2D_fmu5a")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-region_rect = Rect2(0, 0, 128, 128)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uh2d4"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kevrn"]
-texture = SubResource("CompressedTexture2D_uh2d4")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-region_rect = Rect2(0, 0, 128, 128)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf8ra"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr4lk"]
-texture = SubResource("CompressedTexture2D_tf8ra")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.3255203, 0.25999463, 0.13530388, 1)
 
 [sub_resource type="Gradient" id="Gradient_tpnaw"]
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
@@ -88,20 +62,29 @@ colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
 gradient = SubResource("Gradient_uh2d4")
 width = 1
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2l2q"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tpnaw"]
+load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fmu5a"]
-texture = SubResource("CompressedTexture2D_a2l2q")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2da3m"]
+texture = SubResource("CompressedTexture2D_tpnaw")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
-expand_margin_left = 5.0
-expand_margin_top = 41.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 128, 128)
-modulate_color = Color(0.35575253, 0.25637484, 0.12742957, 1)
+modulate_color = Color(0.3255203, 0.25999463, 0.13530388, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fmu5a"]
+load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4r8f"]
+texture = SubResource("CompressedTexture2D_fmu5a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.3255203, 0.25999463, 0.13530388, 1)
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
@@ -109,25 +92,26 @@ Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_470mv")
-Button/styles/hover = SubResource("StyleBoxTexture_58jnp")
+Button/styles/hover = SubResource("StyleBoxTexture_uh2d4")
 Button/styles/normal = SubResource("StyleBoxTexture_k8mdw")
-Button/styles/pressed = SubResource("StyleBoxTexture_52mx2")
+Button/styles/pressed = SubResource("StyleBoxTexture_tf8ra")
 GridContainer/constants/h_separation = 4
 GridContainer/constants/v_separation = 4
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/fonts/font = ExtResource("1_470mv")
 Label/styles/focus = SubResource("StyleBoxTexture_k8mdw")
 Label/styles/normal = SubResource("StyleBoxTexture_k8mdw")
-Panel/styles/panel = ExtResource("3_fmu5a")
+Panel/styles/panel = SubResource("StyleBoxTexture_83md4")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/fonts/bold_font = ExtResource("1_470mv")
 RichTextLabel/fonts/bold_italics_font = ExtResource("1_470mv")
 RichTextLabel/fonts/italics_font = ExtResource("1_470mv")
 RichTextLabel/fonts/mono_font = ExtResource("1_470mv")
 RichTextLabel/fonts/normal_font = ExtResource("1_470mv")
-RichTextLabel/styles/background = SubResource("StyleBoxTexture_2da3m")
-RichTextLabel/styles/fill = SubResource("StyleBoxTexture_g4r8f")
-RichTextLabel/styles/focus = SubResource("StyleBoxTexture_kevrn")
-RichTextLabel/styles/normal = SubResource("StyleBoxTexture_yr4lk")
+RichTextLabel/styles/background = ExtResource("3_2da3m")
+RichTextLabel/styles/fill = ExtResource("3_2da3m")
+RichTextLabel/styles/focus = ExtResource("3_2da3m")
+RichTextLabel/styles/normal = ExtResource("3_2da3m")
 Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
 Window/constants/close_h_offset = 18
@@ -139,5 +123,5 @@ Window/font_sizes/title_font_size = 32
 Window/fonts/title_font = ExtResource("1_470mv")
 Window/icons/close = SubResource("GradientTexture1D_bwdxs")
 Window/icons/close_pressed = SubResource("GradientTexture1D_kevrn")
-Window/styles/embedded_border = SubResource("StyleBoxTexture_fmu5a")
-Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_fmu5a")
+Window/styles/embedded_border = SubResource("StyleBoxTexture_2da3m")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_g4r8f")

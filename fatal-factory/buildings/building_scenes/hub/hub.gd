@@ -7,6 +7,7 @@ var start_marker_2: Node2D
 func _ready() -> void:
 	z_index = 10
 	setup(
+		"The Hub",
 		Vector2i(4,4),
 		load("res://textures/buildings/hub/hub_sprite_frames.tres"),
 		load("res://textures/buildings/hub/hub.png"),
@@ -24,16 +25,17 @@ func _process(_delta: float) -> void:
 				WorldItemHolder.items_in_world.erase(item)
 				item.queue_free()
 
-func just_placed():
-	placed = true
-	var conveyor1 = conveyor_straight.new()
+func just_placed_building_special():
+	var conveyor1 = Conveyor_straight.new()
+	conveyor1.partial_building = true
 	add_child(conveyor1)
 	conveyor1.placed = true
 	conveyor1.z_index = -10
 	conveyor1.rotation_degrees = 180
 	conveyor1.position = Vector2(32,64)
 	
-	var conveyor2 = conveyor_straight.new()
+	var conveyor2 = Conveyor_straight.new()
+	conveyor2.partial_building = true
 	add_child(conveyor2)
 	conveyor2.placed = true
 	conveyor2.z_index = -10
@@ -42,6 +44,9 @@ func just_placed():
 	
 	conveyor1.just_placed()
 	conveyor2.just_placed()
+	
+	child_buildings.append(conveyor1)
+	child_buildings.append(conveyor2)
 	
 	start_marker = Node2D.new()
 	start_marker.position = Vector2(24,48)

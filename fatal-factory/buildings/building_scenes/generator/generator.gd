@@ -16,12 +16,14 @@ func _ready() -> void:
 	
 	z_index = 10
 	setup(
-		Vector2i(3,2),
+		"Generator",
+		Vector2i(3,3),
 		load("res://textures/buildings/generator/generator_sprite_frames.tres"),
 		load("res://textures/buildings/generator/Generator Passive.png"),
 		"Geeenerates Per Secound: 50 Watts \n Costs: 15 Iron \n Uses: 1 Animal",
 		[
-			[15,Raw_Iron.new()]
+			[15,Raw_Iron.new()],
+			[1, Hamster.new()]
 			],
 		[
 			[spawn_per_minute, Energy.new()]
@@ -34,7 +36,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if placed:
 		time_since_spawn += delta
-		if time_since_spawn > secounds_per_spawn:
+		if time_since_spawn > secounds_per_spawn / level:
 			Inventory.item_collected(Energy.new(),1)
 			time_since_spawn = 0
 		

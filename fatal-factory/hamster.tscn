@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2k6thelual25"]
+
+[ext_resource type="Script" uid="uid://c2j8x2hsqg0eb" path="res://Hamster.gd" id="1_ts32c"]
+
+[node name="Hamster" type="Node2D" unique_id=1572122470]
+script = ExtResource("1_ts32c")

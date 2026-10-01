@@ -1,7 +1,7 @@
 extends Node2D
 class_name Item
 
-
+var animated_sprite: AnimatedSprite2D = AnimatedSprite2D.new()
 var sprite: Sprite2D
 var area: Area2D
 var collision_shape: CollisionShape2D
@@ -12,7 +12,7 @@ var discription: String
 
 var picked_up: bool = false
 
-func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, item_discription: String):
+func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, item_discription: String, animation: SpriteFrames = null):
 	z_index = 1
 	title_name = item_name
 	discription = item_discription
@@ -20,6 +20,14 @@ func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, i
 	id = item_id
 	build_children()
 	sprite.texture = texture
+	animated_sprite.visible = false
+	if animation:
+		add_child(animated_sprite)
+		sprite.visible = false
+		animated_sprite.visible = true
+		animated_sprite.sprite_frames = animation
+		animated_sprite.play("default")
+	
 func build_children():
 	sprite = Sprite2D.new()
 	add_child(sprite)
