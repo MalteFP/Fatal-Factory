@@ -8,5 +8,5 @@ func _init() -> void:
 		"res://textures/items/Lightning sprite.png"),
 		5,
 		"Energy",
-		"Produced by Drills  [img]res://textures/items/Lightning sprite.png[/img]"
+		"Produced by Generators  [img]res://textures/buildings/generator/Generator Jump.png[/img]"
 		)

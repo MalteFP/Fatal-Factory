@@ -43,7 +43,7 @@ func cell_to_world(cell: Vector2i) -> Vector2:
 	return cell * cell_size
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		if deleting:
 			delete()
 		elif currently_building:

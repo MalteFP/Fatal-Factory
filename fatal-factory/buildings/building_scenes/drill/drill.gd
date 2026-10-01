@@ -25,6 +25,7 @@ func _ready() -> void:
 	
 	z_index = 10
 	setup(
+		"Drill",
 		Vector2i(3,2),
 		load("res://textures/buildings/drill/drill_sprite_frames.tres"),
 		load("res://textures/buildings/drill/drill.png"),
@@ -44,10 +45,7 @@ func _process(delta: float) -> void:
 	if placed:
 		time_since_spawn += delta
 		
-		
-			
-			
-		if time_since_spawn > secounds_per_spawn:
+		if time_since_spawn > secounds_per_spawn / level:
 			for item in conveyor1.items:
 				if item.global_position.distance_to(to_global(Vector2(8,16))) < 8 or Inventory.items[5] < 1:
 					sprite.pause()
@@ -85,6 +83,9 @@ func just_placed_building_special():
 	
 	conveyor1.just_placed()
 	conveyor2.just_placed()
+	
+	child_buildings.append(conveyor1)
+	child_buildings.append(conveyor2)
 	
 	var world = get_tree().get_first_node_in_group("world")
 	if(world.ore_noise_map.get_noise_2d(global_position.x / 16 + 2, global_position.y / 16 + 1) + 1)/2 > 0.2:

@@ -9,7 +9,7 @@ var goal_arrow: Sprite2D
 var start_marker: Node2D
 var start_arrow: Sprite2D
 
-var speed: float = 10
+var speed: float = 100
 
 var last_item: Item
 
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 				continue
 		for i in range(items.size()):
 			var item = items[i]
-			var next_pos = item.global_position.move_toward(goal_marker.global_position, delta * speed)
+			var next_pos = item.global_position.move_toward(goal_marker.global_position, delta * speed * level)
 			
 			if i == 0:
 				if not last_item or next_pos.distance_to(last_item.global_position) > 8:
@@ -68,7 +68,10 @@ func create_arrows() ->void:
 	goal_arrow.z_index = 10
 	
 func delete():
+	for c in cost:
+		Inventory.item_collected(c[1], c[0])
 	for item in items:
+		Inventory.item_collected(item, 1)
 		item.queue_free()
 	queue_free()
 

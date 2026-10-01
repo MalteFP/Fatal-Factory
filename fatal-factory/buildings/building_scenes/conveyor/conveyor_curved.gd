@@ -4,6 +4,7 @@ class_name Conveyor_curved
 
 func _ready() -> void:
 	setup(
+		"Curved Conveyor",
 		Vector2i(1,1),
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.tres"),
 		load("res://textures/buildings/conveyor/curved/conveyor_curved.png"),

@@ -7,6 +7,7 @@ var start_marker_2: Node2D
 func _ready() -> void:
 	z_index = 10
 	setup(
+		"The Hub",
 		Vector2i(4,4),
 		load("res://textures/buildings/hub/hub_sprite_frames.tres"),
 		load("res://textures/buildings/hub/hub.png"),
@@ -43,6 +44,9 @@ func just_placed_building_special():
 	
 	conveyor1.just_placed()
 	conveyor2.just_placed()
+	
+	child_buildings.append(conveyor1)
+	child_buildings.append(conveyor2)
 	
 	start_marker = Node2D.new()
 	start_marker.position = Vector2(24,48)

@@ -1,6 +1,8 @@
 extends Node2D
 class_name Building
 
+var level: int = 1
+
 var size: Vector2i
 var sprite_frames: SpriteFrames
 
@@ -24,8 +26,11 @@ var placed = false
 
 var partial_building: bool = false
 
-func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, building_icon: CompressedTexture2D, building_tooltip: String, building_cost: Array[Array], building_production: Array[Array] = []) -> void:
+var child_buildings: Array[Building]
+
+func setup(building_name: String, building_size: Vector2i, building_sprite_frames: SpriteFrames, building_icon: CompressedTexture2D, building_tooltip: String, building_cost: Array[Array], building_production: Array[Array] = []) -> void:
 	size = building_size
+	name = building_name
 	sprite_frames = building_sprite_frames
 	tooltip = building_tooltip
 	icon = building_icon
@@ -93,3 +98,9 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 
 func just_placed_building_special():
 	pass
+
+
+func level_up():
+	level += 1
+	for child in child_buildings:
+		child.level_up()

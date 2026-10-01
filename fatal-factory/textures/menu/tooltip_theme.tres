@@ -868,6 +868,7 @@ Label/font_sizes/font_size = 16
 Label/fonts/font = SubResource("FontFile_3ki34")
 Label/styles/focus = SubResource("StyleBoxTexture_4yoex")
 Label/styles/normal = ExtResource("1_lxali")
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/styles/background = ExtResource("1_lxali")
 RichTextLabel/styles/fill = ExtResource("1_lxali")
 RichTextLabel/styles/focus = ExtResource("1_lxali")
