@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://ba36ckg3vgu64" path="res://textures/fonts/Pixelta.ttf" id="1_470mv"]
 [ext_resource type="Texture2D" uid="uid://cvy1eui4vpfub" path="res://textures/menu/button_square_flat_yellow.png" id="2_tpnaw"]
+[ext_resource type="StyleBox" uid="uid://es21lkynsltc" path="res://textures/menu/yellow_style_box_texture.tres" id="3_2da3m"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2da3m"]
 load_path = "res://.godot/imported/button_square_flat_yellow.png-16fe2276bac05dfcb9498159d72cc983.ctex"
@@ -101,15 +102,16 @@ Label/fonts/font = ExtResource("1_470mv")
 Label/styles/focus = SubResource("StyleBoxTexture_k8mdw")
 Label/styles/normal = SubResource("StyleBoxTexture_k8mdw")
 Panel/styles/panel = SubResource("StyleBoxTexture_83md4")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/fonts/bold_font = ExtResource("1_470mv")
 RichTextLabel/fonts/bold_italics_font = ExtResource("1_470mv")
 RichTextLabel/fonts/italics_font = ExtResource("1_470mv")
 RichTextLabel/fonts/mono_font = ExtResource("1_470mv")
 RichTextLabel/fonts/normal_font = ExtResource("1_470mv")
-RichTextLabel/styles/background = SubResource("StyleBoxTexture_uh2d4")
-RichTextLabel/styles/fill = SubResource("StyleBoxTexture_uh2d4")
-RichTextLabel/styles/focus = SubResource("StyleBoxTexture_uh2d4")
-RichTextLabel/styles/normal = SubResource("StyleBoxTexture_uh2d4")
+RichTextLabel/styles/background = ExtResource("3_2da3m")
+RichTextLabel/styles/fill = ExtResource("3_2da3m")
+RichTextLabel/styles/focus = ExtResource("3_2da3m")
+RichTextLabel/styles/normal = ExtResource("3_2da3m")
 Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
 Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
 Window/constants/close_h_offset = 18

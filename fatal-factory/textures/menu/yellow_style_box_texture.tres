@@ -1,9 +1,9 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://es21lkynsltc"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2l2q"]
+[ext_resource type="Texture2D" uid="uid://cvy1eui4vpfub" path="res://textures/menu/button_square_flat_yellow.png" id="1_xandf"]
 
 [resource]
-texture = SubResource("CompressedTexture2D_a2l2q")
+texture = ExtResource("1_xandf")
 texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0

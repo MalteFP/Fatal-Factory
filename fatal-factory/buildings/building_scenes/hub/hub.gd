@@ -24,8 +24,7 @@ func _process(_delta: float) -> void:
 				WorldItemHolder.items_in_world.erase(item)
 				item.queue_free()
 
-func just_placed():
-	placed = true
+func just_placed_building_special():
 	var conveyor1 = Conveyor_straight.new()
 	conveyor1.partial_building = true
 	add_child(conveyor1)

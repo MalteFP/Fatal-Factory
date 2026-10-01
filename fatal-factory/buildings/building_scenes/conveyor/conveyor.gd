@@ -72,7 +72,6 @@ func delete():
 		item.queue_free()
 	queue_free()
 
-func just_placed():
-	placed = true
+func just_placed_building_special():
 	start_arrow.visible = false
 	goal_arrow.visible = false

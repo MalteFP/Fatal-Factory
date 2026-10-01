@@ -10,6 +10,7 @@ var output_amount
 var cost
 var production
 var tooltip
+var upgrade_pop_up
 
 var sprite: AnimatedSprite2D
 var area: Area2D
@@ -42,7 +43,12 @@ func setup(building_size: Vector2i, building_sprite_frames: SpriteFrames, buildi
 	sprite.play("default")
 
 func just_placed():
+	just_placed_building_special()
 	placed = true
+	var p = load("res://upgrade_pop_up.tscn")
+	upgrade_pop_up = p.instantiate()
+	add_child(upgrade_pop_up)
+	
 
 func build_collision_rect():
 	var rect = RectangleShape2D.new()
@@ -69,17 +75,21 @@ func delete():
 	queue_free()
 
 func _mouse_entered_area(_shape_idx):
-	if partial_building:
+	if partial_building or not placed:
 		return
 	sprite.modulate = Color(0.622, 0.622, 0.622, 1.0)
 
 func _mouse_exited_area(_shape_idx):
-	if partial_building:
+	if partial_building or not placed:
 		return
 	sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 func _on_area_input_event(_viewport, event, _shape_idx):
-	if partial_building:
+	if partial_building or not placed:
 		return
 	if event is InputEvent and Input.is_action_just_pressed("click"):
-		print("clicked")
+		upgrade_pop_up.appear()
+
+
+func just_placed_building_special():
+	pass

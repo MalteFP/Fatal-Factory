@@ -65,8 +65,7 @@ func _process(delta: float) -> void:
 		
 		
 
-func just_placed():
-	placed = true
+func just_placed_building_special():
 	conveyor1 = Conveyor_curved.new()
 	conveyor1.partial_building = true
 	add_child(conveyor1)
