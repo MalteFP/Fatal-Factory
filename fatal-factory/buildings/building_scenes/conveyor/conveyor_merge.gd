@@ -1,9 +1,10 @@
 extends Conveyor
 class_name conveyor_merge
 	
-var start_markers
+var start_markers: Array
 func _ready() -> void:
 	setup(
+		"Merge Conveyor",
 		Vector2i(1,1),
 		load("res://textures/buildings/conveyor/Merge/x-conveyor.tres"),
 		load("res://textures/buildings/conveyor/Merge/x-conveyor.png"),
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 	
 	if placed:
 		for item in items:
-			if item.global_position.distance_to(goal_marker.global_position) < 0.1:
+			if item.global_position.distance_to(goal_marker.global_position) < 0.01:
 				WorldItemHolder.items_in_world.append(item)
 				last_item = item
 				items.erase(item)
@@ -60,7 +61,7 @@ func _process(delta: float) -> void:
 		
 		for item in WorldItemHolder.items_in_world:
 			for marker in start_markers:
-				if item and item.global_position.distance_to(start_markers[marker].global_position) <= 4:
+				if item and item.global_position.distance_to(marker.global_position) <= 4:
 					items.append(item)
 					WorldItemHolder.items_in_world.erase(item)
 	queue_redraw()

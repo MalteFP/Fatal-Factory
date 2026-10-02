@@ -59,7 +59,7 @@ func _ready() -> void:
 	item = Raw_Uranium.new()
 	Inventory.item_collected(item, 500)
 	item = Dirt.new()
-	Inventory.item_collected(item, 50)
+	Inventory.item_collected(item, 5000)
 	item = Energy.new()
 	Inventory.item_collected(item, 50)
 
