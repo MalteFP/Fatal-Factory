@@ -1,6 +1,5 @@
 extends Conveyor
 class_name Conveyor_curved
-	
 
 func _ready() -> void:
 	setup(
@@ -13,15 +12,12 @@ func _ready() -> void:
 			[5,Dirt.new()]
 			]
 		)
-	goal_arrow.rotation_degrees = 90
-	start_arrow.rotation_degrees += 180
-	start_arrow.position += Vector2(0,8)
 
-func create_markers() -> void:
-	goal_marker = Node2D.new()
-	add_child(goal_marker)
-	goal_marker.position = Vector2(16,8)
-	
-	start_marker = Node2D.new()
-	add_child(start_marker)
-	start_marker.position = Vector2(8,16)
+func set_transformations() -> void:
+	start_marker_transformations = [
+	Transform2D(deg_to_rad(0), Vector2(8,16))
+	]
+
+	goal_marker_transformations = [
+	Transform2D(deg_to_rad(90), Vector2(16,8))
+	]

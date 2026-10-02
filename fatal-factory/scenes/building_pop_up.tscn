@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bakfbyh4abh8h"]
+
+[ext_resource type="Script" uid="uid://rv1leqkqqvf2" path="res://building_pop_up.gd" id="1_y3278"]
+
+[node name="building_pop_up" type="PanelContainer" unique_id=1612732695]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y3278")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=306297560]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1928654075]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1856376159]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Title" unique_id=778376403]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Title" unique_id=621164579]
+layout_mode = 2
+
+[node name="Discription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2032232170]
+layout_mode = 2
+
+[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1296147069]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Upgrade" unique_id=531199755]
+layout_mode = 2
+text = "Upgrade"
+
+[node name="cost" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Upgrade" unique_id=347152776]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
