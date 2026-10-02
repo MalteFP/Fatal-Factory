@@ -10,6 +10,8 @@ var title_name: String
 var id: int
 var discription: String
 
+var goal: Node2D
+
 var picked_up: bool = false
 
 func setup(item_texture: CompressedTexture2D, item_id: int, item_name: String, item_discription: String, animation: SpriteFrames = null):

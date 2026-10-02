@@ -42,22 +42,24 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	if placed:
-		time_since_spawn += delta
-		
-		if time_since_spawn > secounds_per_spawn / level:
-			for item in conveyor1.items:
-				if item.global_position.distance_to(to_global(Vector2(8,16))) < 8 or Inventory.items[5] < 1:
-					sprite.pause()
-					return
-			sprite.play("default")
-			time_since_spawn = 0
-			Inventory.item_collected(Energy.new(),-1)
-			var item = production_class.new()
-			add_child(item)
-			item.z_index = -1
-			item.position = Vector2(8,16)
-			WorldItemHolder.items_in_world.append(item)
+	if not placed:
+		return
+	time_since_spawn += delta
+	
+	
+	if time_since_spawn > secounds_per_spawn / level:
+		for item in conveyor1.items:
+			if item and item.global_position.distance_to(to_global(Vector2(8,16))) < 8 or Inventory.items[5] < 1:
+				sprite.pause()
+				return
+		sprite.play("default")
+		time_since_spawn = 0
+		Inventory.item_collected(Energy.new(),-1)
+		var item = production_class.new()
+		add_child(item)
+		item.z_index = -1
+		item.position = Vector2(8,16)
+		WorldItemHolder.items_in_world.append(item)
 		
 		
 		

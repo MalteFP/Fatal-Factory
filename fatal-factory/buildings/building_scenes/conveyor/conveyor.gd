@@ -14,6 +14,8 @@ var goal_arrow: Array[Sprite2D]
 
 var speed: float = 100
 
+var spacing: float = 8
+
 var last_item: Item
 
 func _init() -> void:
@@ -24,35 +26,56 @@ func _init() -> void:
 	create_arrows()
 
 func _process(delta: float) -> void:
-	queue_redraw()
 	for i in range(items.size() - 1, -1, -1):
 		if not is_instance_valid(items[i]):
 			items.remove_at(i)
-	
-	if placed:
-		for item in items:
-			for marker in goal_markers:
-				if item.global_position.distance_to(marker.global_position) < 0.1:
-					WorldItemHolder.items_in_world.append(item)
-					last_item = item
-					items.erase(item)
-					continue
-		for i in range(items.size()):
-			for marker in goal_markers:
-				var item = items[i]
-				var next_pos = item.global_position.move_toward(marker.global_position, delta * speed * level)
-				
-				if i == 0:
-					if not last_item or next_pos.distance_to(last_item.global_position) > 8:
-						item.global_position = next_pos
-				elif next_pos.distance_to(items[i - 1].global_position) > 8:
-					item.global_position = next_pos
+	if not placed:
+		return
+	if not is_instance_valid(last_item):
+		last_item = null
 		
-		for item in WorldItemHolder.items_in_world:
-			for marker in start_markers:
-				if item and item.global_position.distance_to(marker.global_position) <= 4:
-					items.append(item)
-					WorldItemHolder.items_in_world.erase(item)
+	items.sort_custom(func(a, b): return _distance_to_goal(a) < _distance_to_goal(b))
+
+	for i in range(items.size()):
+		var item: Item = items[i]
+		var goal = item.goal
+		
+		var next_pos = item.global_position.move_toward(goal.global_position, delta * speed * level)
+		
+		var blocker: Item = items[i - 1] if i > 0 else last_item
+		
+		if blocker == null or next_pos.distance_to(blocker.global_position) > spacing:
+			item.global_position = next_pos
+		
+	if not items.is_empty():
+		var front: Item = items[0]
+		if _distance_to_goal(front) < 0.1:
+			WorldItemHolder.items_in_world.append(front)
+			last_item = front
+			items.remove_at(0)
+	
+	for i in range(WorldItemHolder.items_in_world.size() -1, -1, -1):
+		var item = WorldItemHolder.items_in_world[i]
+		if not is_instance_valid(item):
+			WorldItemHolder.items_in_world.remove_at(i)
+			continue
+		for marker in start_markers:
+			if item.global_position.distance_to(marker.global_position) <= 4 and _has_space_for_new_item(item):
+				item.goal = goal_markers[0]
+				items.append(item)
+				WorldItemHolder.items_in_world.remove_at(i)
+				break
+
+
+func _has_space_for_new_item(new_item: Item) -> bool:
+	for other in items:
+		if other.global_position.distance_to(new_item.global_position) < spacing:
+			return false
+	return true
+
+
+func _distance_to_goal(item: Item) -> float:
+	return item.global_position.distance_to(item.goal.global_position)
 
 func create_markers() -> void:
 	for transformation in goal_marker_transformations:
