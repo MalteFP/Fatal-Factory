@@ -37,7 +37,7 @@ func build_buildings():
 		var script = load(building["script"])
 		var b = script.new()
 		world.add_child(b)
-		b.just_placed()
 		b.global_position = building["position"]
 		b.rotation = building["rotation"]
 		b.scale = building["scale"]
+		b.just_placed()
