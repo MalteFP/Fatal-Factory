@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cu6wohqcdrbww"]
 
-[ext_resource type="Texture2D" uid="uid://dn1nkrt77mo5t" path="res://textures/buildings/conveyor/Merge/x-conveyor.png" id="1_uhlun"]
+[ext_resource type="Texture2D" uid="uid://dn1nkrt77mo5t" path="res://textures/buildings/conveyor/dirt_conveyor/Merge/x-conveyor.png" id="1_uhlun"]
 
 [resource]
 animations = [{

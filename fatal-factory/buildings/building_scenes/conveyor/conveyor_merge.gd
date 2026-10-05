@@ -5,8 +5,8 @@ func _ready() -> void:
 	setup(
 		"Merge Conveyor",
 		Vector2i(1,1),
-		load("res://textures/buildings/conveyor/Merge/x-conveyor.tres"),
-		load("res://textures/buildings/conveyor/Merge/x-conveyor.png"),
+		load("res://textures/buildings/conveyor/dirt_conveyor/Merge/x-conveyor.tres"),
+		load("res://textures/buildings/conveyor/dirt_conveyor/Merge/x-conveyor.png"),
 		"Transfers items",
 		[
 			[10,Dirt.new()]

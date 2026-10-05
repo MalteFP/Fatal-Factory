@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://sgx05hjbcmqu"]
+
+[ext_resource type="Texture2D" uid="uid://bhfya1eqpi3le" path="res://textures/buildings/conveyor/iron_conveyor/iron_conveyor.png" id="1_josmw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_josmw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

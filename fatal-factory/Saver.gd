@@ -44,3 +44,5 @@ func build_buildings():
 		b.rotation = building["rotation"]
 		b.scale = building["scale"]
 		b.just_placed()
+	for item in items:
+		Inventory.item_collected(Inventory.id_to_item[item].new(), items[item])
