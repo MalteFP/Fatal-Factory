@@ -22,7 +22,7 @@ func _ready() -> void:
 		load("res://textures/buildings/generator/Generator Passive.png"),
 		"Geeenerates Per Secound: 50 Watts \n Costs: 15 Iron \n Uses: 1 Animal",
 		[
-			[15,Raw_Iron.new()],
+			[30,Dirt.new()],
 			[1, Hamster.new()]
 			],
 		[

@@ -54,12 +54,16 @@ func _process(delta: float) -> void:
 				return
 		sprite.play("default")
 		time_since_spawn = 0
-		Inventory.item_collected(Energy.new(),-1)
 		var item = production_class.new()
-		add_child(item)
-		item.z_index = -1
-		item.position = Vector2(8,16)
-		WorldItemHolder.items_in_world.append(item)
+		if Inventory.items.has(5) and Inventory.items[5] >= item.id:
+			Inventory.item_collected(Energy.new(),-1 * item.id)
+			add_child(item)
+			item.z_index = -1
+			item.position = Vector2(8,16)
+			WorldItemHolder.items_in_world.append(item)
+		else:
+			item.queue_free()
+			sprite.pause()
 		
 		
 		

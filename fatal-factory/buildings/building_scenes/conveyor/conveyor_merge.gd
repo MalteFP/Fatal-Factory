@@ -9,7 +9,7 @@ func _ready() -> void:
 		load("res://textures/buildings/conveyor/Merge/x-conveyor.png"),
 		"Transfers items",
 		[
-			[5,Raw_Iron.new()]
+			[10,Dirt.new()]
 			]
 		)
 
