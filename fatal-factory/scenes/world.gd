@@ -1,7 +1,7 @@
 extends Node2D
 
 
-
+var map_seed: int
 
 var noise_map = FastNoiseLite.new()
 var ore_noise_map = FastNoiseLite.new()
@@ -52,37 +52,33 @@ var biome_grass_tresholds: Array[Dictionary] = [
 func _process(_delta: float) -> void:
 	generate_visible_tiles()
 
-func _ready() -> void:
-
-	var item = Raw_Iron.new()
-	Inventory.item_collected(item, 5000)
-	item = Raw_Uranium.new()
-	Inventory.item_collected(item, 500)
-	item = Dirt.new()
-	Inventory.item_collected(item, 5000)
-	item = Energy.new()
+func build_world() -> void:
+	await ready
+	Saver.save_game.connect(save)
+	var item = Dirt.new()
 	Inventory.item_collected(item, 50)
-
+	item = Energy.new()
+	Inventory.item_collected(item,0)
 	
 	var hub = Hub.new()
 	add_child(hub)
 	hub.just_placed()
 	
 	
-	noise_map.seed = randi()
+	noise_map.seed = map_seed
 	noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	noise_map.frequency = frequency
 	noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
 	noise_map.fractal_octaves = 2.5
 	
 	
-	ore_noise_map.seed = randi()
+	ore_noise_map.seed = map_seed
 	ore_noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	ore_noise_map.frequency = ore_frequency
 	ore_noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
 	ore_noise_map.fractal_octaves = 2
 	
-	biome_noise_map.seed = randi()
+	biome_noise_map.seed = map_seed
 	biome_noise_map.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 	biome_noise_map.frequency = biome_frequency
 	biome_noise_map.fractal_type = FastNoiseLite.FRACTAL_FBM
@@ -102,7 +98,6 @@ func get_tile_type(noise_value: float, ore_noise_value: float, biome_noise_value
 						return biome_treshold["tile"]
 			return treshold["tile"]
 	return Vector2i(7,0)
-#Lundses was here
 
 func generate_visible_tiles():
 	var viewport_size = get_viewport_rect().size * (Vector2(1,1) / camera.zoom) 
@@ -157,3 +152,6 @@ func place_ore(coords: Vector2):
 					rotations.pick_random()
 					)
 			return
+
+func save():
+	Saver.map_seed = map_seed

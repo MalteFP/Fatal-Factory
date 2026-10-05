@@ -72,7 +72,7 @@ func set_building(building_scene: PackedScene):
 	if currently_building:
 		currently_building.queue_free()
 	currently_building = building_scene.instantiate()
-	add_child(currently_building)
+	get_parent().add_child(currently_building)
 
 
 
@@ -131,3 +131,13 @@ func delete():
 	var overlap = $DeletionMask.get_overlapping_areas()
 	for area in overlap:
 		area.get_parent().delete()
+
+
+
+
+func _on_button_pressed() -> void:
+	Saver.save()
+
+
+func _on_button_2_pressed() -> void:
+	Saver.load_game()

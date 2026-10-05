@@ -6,7 +6,7 @@ func _init() -> void:
 	setup(
 		load(
 		"res://textures/items/ores/Raw_Iron.png"),
-		0,
+		1,
 		"Raw Iron",
 		"Produced by Drills  [img]res://textures/buildings/drill/drill.png[/img]"
 		)

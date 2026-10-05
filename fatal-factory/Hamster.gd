@@ -18,8 +18,9 @@ func _ready() -> void:
 	movement_vector = movement_vector.rotated(randf_range(0,2 * PI))
 
 func _process(delta: float) -> void:
-	global_position += movement_vector * delta * 5
+	var future_position = global_position + movement_vector * delta * 5
 	movement_vector = movement_vector.rotated(d.pick_random() * delta * 10)
+	global_position = future_position
 	if movement_vector.x < 0:
 		scale.x = -1
 	else:
