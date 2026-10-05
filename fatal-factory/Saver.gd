@@ -3,6 +3,7 @@ extends Node
 const save_location = "user://Savefile.json"
 var contentToSave = {}
 var buildings: Array[Dictionary] = [{}]
+var items: Dictionary
 var map_seed: int
 
 
@@ -13,6 +14,7 @@ func save():
 	save_game.emit()
 	contentToSave["buildings"] = buildings
 	contentToSave["map_seed"] = map_seed
+	contentToSave["items"] = items
 	var file = FileAccess.open(save_location, FileAccess.WRITE)
 	file.store_var(contentToSave.duplicate())
 	file.close()
@@ -29,6 +31,7 @@ func load_game():
 func unpack_save():
 	buildings = contentToSave["buildings"]
 	map_seed = contentToSave["map_seed"]
+	items = contentToSave["items"]
 	
 func build_buildings():
 	await get_tree().create_timer(0).timeout
