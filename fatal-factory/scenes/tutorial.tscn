@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://do7tho1ar53s1"]
+
+[ext_resource type="Script" uid="uid://dqqe06f57bfuu" path="res://scenes/tutorial.gd" id="1_c13y7"]
+
+[node name="Tutorial" type="Control" unique_id=1727763042]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c13y7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=700361960]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=256169230]
+anchors_preset = -1
+anchor_right = 0.083000004
+anchor_bottom = 0.105000004
+offset_left = 263.0
+offset_right = 785.384
+offset_bottom = -45.04
+horizontal_alignment = 1

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t3cvlmc54hh" path="res://scenes/builder.tscn" id="2_k0juu"]
 [ext_resource type="Script" uid="uid://50rca4te272j" path="res://scenes/camera_2d.gd" id="3_71j4m"]
 [ext_resource type="Texture2D" uid="uid://b4mcil8vsm4f1" path="res://textures/tilemaps/ores.png" id="3_qfnet"]
+[ext_resource type="PackedScene" uid="uid://do7tho1ar53s1" path="res://scenes/tutorial.tscn" id="6_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("2_71j4m")
@@ -53,3 +54,5 @@ tile_set = SubResource("TileSet_lxali")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=271482420]
 script = ExtResource("3_71j4m")
+
+[node name="Tutorial" parent="." unique_id=1727763042 instance=ExtResource("6_qfnet")]
