@@ -19,12 +19,13 @@ var tutorialMessages = [
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tutorialStage = 0 # Replace with function body.
-
+	$CanvasLayer/Label.text = tutorialMessages[tutorialStage]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Next Tutorial"):
-		$CanvasLayer/Label.text = tutorialMessages[tutorialStage]
 		tutorialStage += 1
+		$CanvasLayer/Label.text = tutorialMessages[tutorialStage]
+		

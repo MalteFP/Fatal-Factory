@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpokgsjgtg311"]
 
 [ext_resource type="Script" uid="uid://b1lyc3pptkp7b" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://b36m3muxrobv3" path="res://textures/menu/FF Main Menu.png" id="2_7vrkn"]
 
 [node name="main menu" type="Control" unique_id=2143646244]
 layout_mode = 3
@@ -16,8 +17,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 241.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer" unique_id=1376635056]
+position = Vector2(577.26483, 127.500015)
+scale = Vector2(12.036149, 11.546875)
+texture = ExtResource("2_7vrkn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=148264674]
 layout_mode = 2
