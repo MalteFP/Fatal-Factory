@@ -1,7 +1,7 @@
 extends Control
 var tutorialStage;
 var tutorialMessages = [
-	"Hello and welcome to the world of Fatal Factory!",
+	"Hello and welcome to the world of Fatal Factory! (Press Enter to go next.)",
 	"Your mission is to drain all ressourcer from the planet.",
 	"To get started, click on 'Drill' in the buildings menu to select it for construction.",
 	"Now place it on the ground near the Hub to start drilling.",
@@ -13,7 +13,6 @@ var tutorialMessages = [
 	"Your drills require energy to work. To get energy you must build a Generator.",
 	"A generator needs an animal to produce energy. Press on of the Hamsters running around to capture it.",
 	"Well Done! You can now build a generator. Place it anywhere to start producing energy, no transportation needed"
-	
 	
 ]
 # Called when the node enters the scene tree for the first time.
@@ -27,5 +26,7 @@ func _process(delta: float) -> void:
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Next Tutorial"):
 		tutorialStage += 1
-		$CanvasLayer/Label.text = tutorialMessages[tutorialStage]
-		
+		if tutorialStage < tutorialMessages.size():
+			$CanvasLayer/Label.text = tutorialMessages[tutorialStage]
+		else:
+			$CanvasLayer/Label.hide()
