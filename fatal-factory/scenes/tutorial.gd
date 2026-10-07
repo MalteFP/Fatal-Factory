@@ -8,6 +8,7 @@ var tutorialMessages = [
 	"Good job! You are now exploting the planet for your own financial gain.",
 	"To collect the ressourcer you must build a line of conveyors to transport the dirt to the Hub.",
 	"Press 'R' to rotate the conveyor or press 'T' to mirror it horizontally.",
+	"Hold middle mouse button and drag to move around the map. Use the scroll wheel to zoom in and out",
 	"If you want to remove a building, press 'D' to enable sell mode.",
 	"Selling a building will refund half of the resources used to contruct it and remove it from the map.",
 	"Your drills require energy to work. To get energy you must build a Generator.",
