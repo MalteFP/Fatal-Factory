@@ -8,7 +8,6 @@ func _ready() -> void:
 func _update_columns():
 	var cell_width = 100
 	grid.columns = max(1, floori(size.x / cell_width))
-#Lundses was here
 
 func _process(_delta: float) -> void:
 	for button in grid.get_children():
