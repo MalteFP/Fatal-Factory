@@ -5,8 +5,8 @@ func _ready() -> void:
 	setup(
 		"Straight Conveyor",
 		Vector2i(1,1),
-		load("res://textures/buildings/conveyor/straight/conveyor_straight.tres"),
-		load("res://textures/buildings/conveyor/straight/conveyor_straight.png"),
+		load("res://textures/buildings/conveyor/dirt_conveyor/straight/conveyor_straight.tres"),
+		load("res://textures/buildings/conveyor/dirt_conveyor/straight/conveyor_straight.png"),
 		"Transfers items",
 		[
 			[5,Dirt.new()]

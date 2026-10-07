@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://44a7r3m1wjiw"]
+
+[ext_resource type="Script" uid="uid://cxddcythxcooy" path="res://buildings/building_scenes/conveyor/iron_conveyor/conveyor_iron_straight.gd" id="1_xeqai"]
+
+[node name="ConveyorIronStraight" type="Node2D" unique_id=1429429200]
+script = ExtResource("1_xeqai")

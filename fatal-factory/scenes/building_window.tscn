@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dntejqythnqvr" path="res://buildings/building_scenes/conveyor/conveyor_curved.tscn" id="4_w1jjm"]
 [ext_resource type="PackedScene" uid="uid://bfqqikhef8vyr" path="res://buildings/building_scenes/generator/generator.tscn" id="5_0rajq"]
 [ext_resource type="PackedScene" uid="uid://dfdjlfg1go246" path="res://buildings/building_scenes/conveyor/conveyor_merge.tscn" id="6_1pqkr"]
+[ext_resource type="PackedScene" uid="uid://44a7r3m1wjiw" path="res://buildings/building_scenes/conveyor/iron_conveyor/conveyor_iron_straight.tscn" id="7_5p1nd"]
 
 [node name="building_Window" type="Window" unique_id=822202477]
 transparent_bg = true
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 title = "Builder "
-position = Vector2i(1000, 56)
+position = Vector2i(0, 36)
 size = Vector2i(134, 330)
 transparent = true
 unfocusable = true
@@ -58,3 +59,7 @@ building_scene = ExtResource("5_0rajq")
 [node name="building_button5" parent="MarginContainer/ScrollContainer/GridContainer" unique_id=451207648 instance=ExtResource("2_nus2c")]
 layout_mode = 2
 building_scene = ExtResource("6_1pqkr")
+
+[node name="building_button6" parent="MarginContainer/ScrollContainer/GridContainer" unique_id=599502930 instance=ExtResource("2_nus2c")]
+layout_mode = 2
+building_scene = ExtResource("7_5p1nd")
